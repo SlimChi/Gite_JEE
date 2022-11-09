@@ -1,7 +1,8 @@
 package fr.cs.gite_jee.bean;
 
-import fr.cs.gite_jee.metier.Localite;
-import fr.cs.gite_jee.metier.Ville;
+import fr.cs.gite_jee.dao.DaoFactory;
+import fr.cs.gite_jee.metier.*;
+import fr.cs.gite_jee.service.GiteSearch;
 import fr.cs.gite_jee.service.ServiceGite;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
@@ -14,52 +15,90 @@ import java.util.ArrayList;
 @SessionScoped
 public class GiteBean implements Serializable {
 
-    private static ArrayList<Ville> allVilles;
-    private Ville villeSelected;
 
-    private static ArrayList<Localite> allLocalites;
-    private Localite localiteSelected;
+
+    private static ArrayList<Equipement> allEquipements;
+    private Equipement equipementSelected;
+
+    private ArrayList<Gite> allGites;
+    private Gite giteSelected;
 
     private ServiceGite serviceGite;
 
     @PostConstruct
     private void init() {
-allLocalites = serviceGite.getLocaliteFiltre();
+        Equipement equipement = new Equipement();
+        equipement.setLibelle("Choisir un equipement");
+        equipement.setId(0);
+
+        allEquipements = DaoFactory.getEquipementDAO().getAll();
+        allEquipements.add(0,equipement);
+
+        GiteSearch giteSearch = new GiteSearch();
+        giteSearch.setNomDuGite("");
+        Equipement e = new Equipement();
+        e.setId(0);
+        giteSearch.setEquipement(e);
+
+        TypeEquipement typeEquipement = new TypeEquipement();
+        typeEquipement.setId(0);
+        giteSearch.setTypeEquipement(typeEquipement);
+
+        Region region = new Region();
+        region.setId(0);
+        giteSearch.setRegion(region);
+
+        Ville ville = new Ville();
+        ville.setCodeInseeDept("");
+        giteSearch.setVille(ville);
+
+        Departement departement = new Departement();
+        departement.setCodeInseeDept("");
+        giteSearch.setDepartement(departement);
+
+        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
+
+        System.out.println(allGites.size());
+
+        for (Gite gite:allGites
+             ) {
+            System.out.println(gite.getId());
+
+        }
+
+
     }
 
-    public GiteBean(){
-        serviceGite = new ServiceGite();
+
+    public ArrayList<Equipement> getAllEquipements() {
+        return allEquipements;
     }
 
-    public ArrayList<Localite> getAllLocalites() {
-        return allLocalites;
+    public static void setAllEquipements(ArrayList<Equipement> allEquipements) {
+        GiteBean.allEquipements = allEquipements;
     }
 
-    public static void setAllLocalites(ArrayList<Localite> allLocalites) {
-        GiteBean.allLocalites = allLocalites;
+    public Equipement getEquipementSelected() {
+        return equipementSelected;
     }
 
-    public Localite getLocaliteSelected() {
-        return localiteSelected;
+    public void setEquipementSelected(Equipement equipementSelected) {
+        this.equipementSelected = equipementSelected;
     }
 
-    public void setLocaliteSelected(Localite localiteSelected) {
-        this.localiteSelected = localiteSelected;
+    public ArrayList<Gite> getAllGites() {
+        return allGites;
     }
 
-    public ArrayList<Ville> getAllVilles() {
-        return allVilles;
+    public void setAllGites(ArrayList<Gite> allGites) {
+        this.allGites = allGites;
     }
 
-    public static void setAllVilles(ArrayList<Ville> allVilles) {
-        GiteBean.allVilles = allVilles;
+    public Gite getGiteSelected() {
+        return giteSelected;
     }
 
-    public Ville getVilleSelected() {
-        return villeSelected;
-    }
-
-    public void setVilleSelected(Ville villeSelected) {
-        this.villeSelected = villeSelected;
+    public void setGiteSelected(Gite giteSelected) {
+        this.giteSelected = giteSelected;
     }
 }

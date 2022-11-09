@@ -1,14 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="gite_jee:war">
+  <artifact type="war" name="Gite_JEE:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <module>gite_jee</module>
+        <module>Gite_JEE</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="archive" name="gite_jee-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="gite_jee:war exploded" />
+      <element id="artifact" artifact-name="Gite_JEE:war exploded" />
     </root>
   </artifact>
 </component>

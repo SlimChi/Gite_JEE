@@ -16,12 +16,12 @@
 
                     <h:panelGrid columns="2" cellpadding="2">
 
-                        <p:outputLabel for="comboVille" value="Choisir une ville : "/>
-                        <p:selectOneMenu id="comboVille" value="#{giteBean.localiteSelected}" required="true"
+                        <p:outputLabel for="comboEquipement" value="Choisir un equipement : "/>
+                        <p:selectOneMenu id="comboEquipement" value="#{giteBean.equipementSelected}" required="true"
                                          style="width:100%">
-                            <f:ajax render="choixVille"/>
-                            <f:selectItems value="#{giteBean.allLocalites}"/>
-                            <f:converter converterId="villeConverter"/>
+                            <f:ajax render="choixEquipement"/>
+                            <f:selectItems value="#{giteBean.allEquipements}"/>
+                            <f:converter converterId="equipementConverter"/>
                         </p:selectOneMenu>
 
                     </h:panelGrid>
@@ -31,8 +31,8 @@
 
                 <div class="result">
                     <h3>
-                        <h:outputText id="choixVille" name="choixVille"
-                                      value="La couleur de la bière : #{giteBean.localiteSelected}"/>
+                        <h:outputText id="choixEquipement" name="choixEquipement"
+                                      value="L'équipement : #{giteBean.equipementSelected}"/>
                     </h3>
 
                 </div>
