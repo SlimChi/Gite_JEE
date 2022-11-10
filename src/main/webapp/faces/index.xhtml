@@ -12,29 +12,172 @@
                         xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                         xmlns:h="http://xmlns.jcp.org/jsf/html">
             <ui:define name="contenu">
-                <h:form classe="form">
+                <div class="card crud-demo">
+                    <h:form id="form" style="width: 85%; background-color: beige">
+                        <p:growl id="messages" showDetail="true"/>
 
-                    <h:panelGrid columns="2" cellpadding="2">
 
-                        <p:outputLabel for="comboEquipement" value="Choisir un equipement : "/>
-                        <p:selectOneMenu id="comboEquipement" value="#{giteBean.equipementSelected}" required="true"
-                                         style="width:100%">
-                            <f:ajax render="choixEquipement"/>
-                            <f:selectItems value="#{giteBean.allEquipements}"/>
-                            <f:converter converterId="equipementConverter"/>
-                        </p:selectOneMenu>
+                        <p:dataTable id="gites" widgetVar="dtGites" var="gite" value="#{giteBean.allGites}"
+                                     showGridlines="true" stripedRows="true"
+                                     reflow="true" styleClass="products-table"
+                                     selection="#{giteBean.allGitesSelected}" stickyHeader="true"
+                                     stickyTopAt=".layout-topbar"
+                                     rowKey="#{giteBean.giteSelected.id}" paginator="true" rows="25"
+                                     rowSelectMode="add" paginatorPosition="bottom">
+                            <f:facet name="header">
+                                <div class="products-table-header">
+                                    <span style="font-weight: bold">Rechercher</span>
+                                    <span class="filter-container ui-input-icon-left" style="margin-right: 10px"> <i
+                                            class="pi pi-search"></i>
+                             <p:inputText id="globalFilter" onkeyup="PF('dtArticles').filter()" placeholder="Search"/>
+                            </span>
 
-                    </h:panelGrid>
-                    <p:divider/>
+                                    <div style="float: right">
+                                        <p:splitButton value="Filtrer" action="#{sdbmBean.filtrer}" update="gites"
+                                                       icon="pi pi-check-circle">
+                                            <p:menuitem value="Reset" action="#{sdbmBean.reset}" update="gites"
+                                                        icon="pi pi-refresh"/>
+                                        </p:splitButton>
+                                    </div>
+                                </div>
 
-                </h:form>
+                                <div style="margin-top: 15px">
+                                    <p:commandButton value="Ajouter" class="ui-button-yellow rounded-button"
+                                                     icon="pi pi-plus-circle"
+                                                     actionListener="#{giteBean.NouveauArticle}"
+                                                     update=":dialogs:manage-product-content"
+                                                     oncomplete="PF('manageProductDialog').show()"
+                                                     styleClass="ui-button rounded-button" style="margin-right: .5rem">
+                                        <p:resetInput target=":dialogs:manage-product-content"/>
+                                    </p:commandButton>
+                                </div>
 
-                <div class="result">
-                    <h3>
-                        <h:outputText id="choixEquipement" name="choixEquipement"
-                                      value="L'équipement : #{giteBean.equipementSelected}"/>
-                    </h3>
 
+                            </f:facet>
+                            <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
+
+                            <p:column headerText="Article Id" sortBy="#{gite.id}" filterBy="#{gite.id}">
+                                <h:outputText value="#{gite.id}"/>
+                            </p:column>
+                            <p:column headerText="Nom" sortBy="#{gite.nom}" filterBy="#{gite.nom}">
+                                <h:outputText value="#{gite.nom}"/>
+                            </p:column>
+                            <p:column headerText="Ville" sortBy="#{gite.ville.nom}" filterBy="#{gite.ville.nom}">
+                                <h:outputText value="#{gite.ville.nom}"/>
+                            </p:column>
+                            <p:column headerText="Département" sortBy="#{gite.ville.departement.nomDepartement}" filterBy="#{gite.ville.departement.nomDepartement}">
+                                <h:outputText value="#{gite.ville.departement.nomDepartement}"/>
+                            </p:column>
+                            <p:column headerText="Nombre de couchage" sortBy="#{gite.nombreCouchage}" filterBy="#{gite.nombreCouchage}">
+                                <h:outputText value="#{gite.nombreCouchage}"/>
+                            </p:column>
+
+
+
+                            <p:column>
+                                <div style="float: right">
+                                    <p:commandButton icon="pi pi-pencil" update=":dialogs:manage-product-content"
+                                                     oncomplete="PF('manageProductDialog').show()"
+                                                     styleClass="edit-button rounded-button ui-button-success"
+                                                     process="@this">
+                                        <f:setPropertyActionListener value="#{article}"
+                                                                     target="#{giteBean.giteSelected}"/>
+                                        <p:resetInput target=":dialogs:manage-product-content"/>
+                                    </p:commandButton></div>
+
+                                <p:commandButton class="ui-button-danger rounded-button" icon="pi pi-trash"
+                                                 style="margin-left: 15px" process="@this"
+                                                 oncomplete="PF('deleteProductDialog').show()">
+                                    <f:setPropertyActionListener value="#{gite}"
+                                                                 target="#{giteBean.giteSelected}"/>
+
+                                </p:commandButton>
+                            </p:column>
+
+                        </p:dataTable>
+
+
+                    </h:form>
+                    <h:form id="dialogs">
+                        <p:dialog header="Détails de l'article" showEffect="fade" modal="true"
+                                  widgetVar="manageProductDialog"
+                                  responsive="true">
+                            <p:outputPanel id="manage-product-content" class="ui-fluid">
+                                <p:outputPanel rendered="#{not empty giteBean.giteSelected}">
+
+                                    <div class="field">
+                                        <p:outputLabel for="name">Gite</p:outputLabel>
+                                        <p:inputText id="name" value="#{giteBean.giteSelected.nom}"
+                                                     required="true"/>
+                                    </div>
+
+                                 
+                                    <div class="formgrid grid">
+                                        <div class="field col">
+                                            <p:outputLabel for="price">Prix</p:outputLabel>
+                                            <p:inputNumber id="price" value="#{sdbmBean.articleSelected.prixAchat}"
+                                                           symbol=" €"
+                                                           symbolPosition="s" decimalSeparator="."
+                                                           thousandSeparator=","/>
+                                        </div>
+                                        <div class="field col">
+                                            <p:outputLabel for="quantity">Stock</p:outputLabel>
+                                            <p:spinner id="quantity" min="0"
+                                                       value="#{sdbmBean.articleSelected.stock}"/>
+                                        </div>
+                                        <div style="margin-top: 15px">
+                                            <p:selectOneMenu id="couleur" value="#{sdbmBean.articleSelected.couleur}"
+                                                             dynamic="true">
+                                                <f:selectItems value="#{sdbmBean.allCouleur}"/>
+
+                                            </p:selectOneMenu>
+                                        </div>
+                                        <div class="field col">
+                                            <p:outputLabel for="titrage">Titrage</p:outputLabel>
+                                            <p:spinner id="titrage" min="0.5" max="26"
+                                                       value="#{sdbmBean.articleSelected.titrage}"/>
+                                        </div>
+                                        <div style="margin-top: 15px">
+                                            <p:selectOneMenu id="marque" value="#{sdbmBean.articleSelected.marque}"
+                                                             dynamic="true">
+                                                <f:selectItems value="#{sdbmBean.allMarques}"/>
+
+                                            </p:selectOneMenu>
+                                        </div>
+                                        <div style="margin-top: 15px">
+                                            <p:selectOneMenu id="type" value="#{sdbmBean.articleSelected.typeBiere}"
+                                                             dynamic="true">
+                                                <f:selectItems value="#{sdbmBean.allTypeBiere}"/>
+
+                                            </p:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </p:outputPanel>
+                            </p:outputPanel>
+
+                            <f:facet name="footer">
+                                <p:commandButton value="Save" icon="pi pi-check"
+                                                 actionListener="#{sdbmBean.saveArticle}"
+                                                 update="manage-product-content"
+                                                 process="manage-product-content @this"/>
+                                <p:commandButton value="Cancel" icon="pi pi-times"
+                                                 onclick="PF('manageProductDialog').hide()"
+                                                 class="ui-button-secondary" type="button"/>
+                            </f:facet>
+                        </p:dialog>
+
+                        <p:confirmDialog widgetVar="deleteProductDialog" showEffect="fade" width="300"
+                                         message="Delete the product?" header="Confirm" severity="warn">
+                            <p:commandButton value="Yes" icon="pi pi-check" actionListener="#{sdbmBean.deleteArticle}"
+                                             process="@this"
+                                             oncomplete="PF('deleteProductDialog').hide()"/>
+                            <p:commandButton value="No" type="button" styleClass="ui-button-secondary"
+                                             icon="pi pi-times"
+                                             onclick="PF('deleteProductDialog').hide()"/>
+                        </p:confirmDialog>
+
+
+                    </h:form>
                 </div>
             </ui:define>
 

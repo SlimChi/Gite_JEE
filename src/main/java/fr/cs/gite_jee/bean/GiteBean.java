@@ -21,6 +21,7 @@ public class GiteBean implements Serializable {
     private Equipement equipementSelected;
 
     private ArrayList<Gite> allGites;
+    private ArrayList<Gite> allGitesSelected;
     private Gite giteSelected;
 
     private ServiceGite serviceGite;
@@ -62,6 +63,7 @@ public class GiteBean implements Serializable {
 
 
 
+
     }
 
 
@@ -95,5 +97,13 @@ public class GiteBean implements Serializable {
 
     public void setGiteSelected(Gite giteSelected) {
         this.giteSelected = giteSelected;
+    }
+
+    public ArrayList<Gite> getAllGitesSelected() {
+        return allGitesSelected;
+    }
+
+    public void setAllGitesSelected(ArrayList<Gite> allGitesSelected) {
+        this.allGitesSelected = allGitesSelected;
     }
 }

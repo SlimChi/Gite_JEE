@@ -30,8 +30,8 @@ public class ServiceGite {
     }
 
 
-    public ArrayList<Gite> getGiteFiltre() {
-        return giteFiltre;
+    public ArrayList<Gite> getGiteFiltre(GiteSearch giteSearch) {
+        return DaoFactory.getGiteDAO().getLike(giteSearch);
     }
 
     public ArrayList<Localite> getLocaliteFiltre() {
