@@ -59,14 +59,18 @@ public class GiteDAO extends DAO<Gite, GiteSearch> {
     }
 
 
-@Override
+    @Override
     public ArrayList<Gite> getLike(GiteSearch giteSearch) {
+
         ResultSet rs;
         ArrayList<Gite> liste = new ArrayList<>();
         String procedureStockee = "{call SP_GITE_QBE(?,?,?,?,?,?)}";
 
         try (CallableStatement cStmt = this.connexion.prepareCall(procedureStockee)) {
-            cStmt.setInt(1, giteSearch.getId());
+
+
+
+            cStmt.setString(1, giteSearch.getNomDuGite());
             cStmt.setInt(2, giteSearch.getEquipement().getId());
             cStmt.setInt(3, giteSearch.getTypeEquipement().getId());
 
@@ -78,10 +82,8 @@ public class GiteDAO extends DAO<Gite, GiteSearch> {
             cStmt.execute();
             rs = cStmt.getResultSet();
 
-
             while (rs.next()) {
 
-                System.out.println("while");
                 Gite gite = new Gite();
 
                 gite.setId(rs.getInt(1));
