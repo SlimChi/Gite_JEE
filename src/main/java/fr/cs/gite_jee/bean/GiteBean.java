@@ -20,11 +20,25 @@ public class GiteBean implements Serializable {
     private static ArrayList<Equipement> allEquipements;
     private Equipement equipementSelected;
 
+    private static ArrayList<TypeEquipement> allTypeEquipements;
+    private TypeEquipement typeEquipementSelected;
+
+    private static ArrayList<Ville> allVilles;
+    private Ville villeSelected;
+
+    private static ArrayList<Region> allRegion;
+    private Region regionSelected;
+
+    private static ArrayList<Departement> allDepartement;
+    private Departement departementSelected;
+
     private ArrayList<Gite> allGites;
     private ArrayList<Gite> allGitesSelected;
     private Gite giteSelected;
 
     private ServiceGite serviceGite;
+
+    private GiteSearch giteSearch;
 
     @PostConstruct
     private void init() {
@@ -81,6 +95,70 @@ public class GiteBean implements Serializable {
 
     public void setEquipementSelected(Equipement equipementSelected) {
         this.equipementSelected = equipementSelected;
+    }
+
+    public ArrayList<TypeEquipement> getAllTypeEquipements() {
+        return allTypeEquipements;
+    }
+
+    public static void setAllTypeEquipements(ArrayList<TypeEquipement> allTypeEquipements) {
+        GiteBean.allTypeEquipements = allTypeEquipements;
+    }
+
+    public TypeEquipement getTypeEquipementSelected() {
+        return typeEquipementSelected;
+    }
+
+    public void setTypeEquipementSelected(TypeEquipement typeEquipementSelected) {
+        this.typeEquipementSelected = typeEquipementSelected;
+    }
+
+    public ArrayList<Ville> getAllVilles() {
+        return allVilles;
+    }
+
+    public static void setAllVilles(ArrayList<Ville> allVilles) {
+        GiteBean.allVilles = allVilles;
+    }
+
+    public Ville getVilleSelected() {
+        return villeSelected;
+    }
+
+    public void setVilleSelected(Ville villeSelected) {
+        this.villeSelected = villeSelected;
+    }
+
+    public ArrayList<Region> getAllRegion() {
+        return allRegion;
+    }
+
+    public static void setAllRegion(ArrayList<Region> allRegion) {
+        GiteBean.allRegion = allRegion;
+    }
+
+    public Region getRegionSelected() {
+        return regionSelected;
+    }
+
+    public void setRegionSelected(Region regionSelected) {
+        this.regionSelected = regionSelected;
+    }
+
+    public ArrayList<Departement> getAllDepartement() {
+        return allDepartement;
+    }
+
+    public static void setAllDepartement(ArrayList<Departement> allDepartement) {
+        GiteBean.allDepartement = allDepartement;
+    }
+
+    public Departement getDepartementSelected() {
+        return departementSelected;
+    }
+
+    public void setDepartementSelected(Departement departementSelected) {
+        this.departementSelected = departementSelected;
     }
 
     public ArrayList<Gite> getAllGites() {
