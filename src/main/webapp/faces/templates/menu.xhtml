@@ -4,10 +4,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
 <ui:composition>
 
-menu
+    <div class="card">
+            <p:growl id="messages"/>
+
+            <p:menubar>
+                <p:submenu label="connexion" icon="pi pi-fw pi-user">
+                    <p:menuitem value="Espace client" icon="pi pi-fw pi-user"/>
+                    <p:menuitem value="Espace proprietaire" icon="pi pi-fw pi-edit"/>
+                </p:submenu>
+
+                <p:menuitem value="Inscription" icon="pi pi-fw pi-user-plus"/>
+
+                <p:submenu label="Prix" icon="pi pi-fw pi-euro">
+                </p:submenu>
+
+                <p:divider layout="vertical"/>
+
+                <p:menuitem value="Fr" icon="pi pi-fw pi-language"/>
+
+
+            </p:menubar>
+
+
+    </div>
 </ui:composition>
 </html>

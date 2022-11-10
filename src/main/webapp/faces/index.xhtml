@@ -13,6 +13,7 @@
                         xmlns:h="http://xmlns.jcp.org/jsf/html">
             <ui:define name="contenu">
                 <div class="card crud-demo">
+
                     <h:form id="form" style="width: 85%; background-color: beige">
                         <p:growl id="messages" showDetail="true"/>
 
@@ -60,18 +61,22 @@
                                 <h:outputText value="#{gite.id}"/>
                             </p:column>
                             <p:column headerText="Nom" sortBy="#{gite.nom}" filterBy="#{gite.nom}">
+
+                                    <img alt="no image" src="http://localhost:8080/Gite/faces/gite1.jpg" style="width:300px; height:200px"/>
+
                                 <h:outputText value="#{gite.nom}"/>
                             </p:column>
                             <p:column headerText="Ville" sortBy="#{gite.ville.nom}" filterBy="#{gite.ville.nom}">
                                 <h:outputText value="#{gite.ville.nom}"/>
                             </p:column>
-                            <p:column headerText="Département" sortBy="#{gite.ville.departement.nomDepartement}" filterBy="#{gite.ville.departement.nomDepartement}">
+                            <p:column headerText="Département" sortBy="#{gite.ville.departement.nomDepartement}"
+                                      filterBy="#{gite.ville.departement.nomDepartement}">
                                 <h:outputText value="#{gite.ville.departement.nomDepartement}"/>
                             </p:column>
-                            <p:column headerText="Nombre de couchage" sortBy="#{gite.nombreCouchage}" filterBy="#{gite.nombreCouchage}">
+                            <p:column headerText="Nombre de couchage" sortBy="#{gite.nombreCouchage}"
+                                      filterBy="#{gite.nombreCouchage}">
                                 <h:outputText value="#{gite.nombreCouchage}"/>
                             </p:column>
-
 
 
                             <p:column>
@@ -111,7 +116,7 @@
                                                      required="true"/>
                                     </div>
 
-                                 
+
                                     <div class="formgrid grid">
                                         <div class="field col">
                                             <p:outputLabel for="price">Prix</p:outputLabel>
