@@ -35,6 +35,8 @@ public class GiteBean implements Serializable {
     private ArrayList<Gite> allGites;
     private ArrayList<Gite> allGitesSelected;
     private Gite giteSelected;
+    private static ArrayList<SaisonGite> allSaisonGite;
+    private SaisonGite saisonGiteSelected;
 
     private ServiceGite serviceGite;
 
@@ -73,10 +75,8 @@ public class GiteBean implements Serializable {
         departement.setCodeInseeDept("");
         giteSearch.setDepartement(departement);
 
+
         allGites= DaoFactory.getGiteDAO().getLike(giteSearch);
-
-
-
 
     }
 

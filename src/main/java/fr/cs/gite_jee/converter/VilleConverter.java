@@ -8,7 +8,7 @@ import jakarta.faces.convert.Converter;
 import jakarta.faces.convert.FacesConverter;
 import jakarta.inject.Inject;
 
-@FacesConverter(value = "regionConverter",managed = true)
+@FacesConverter(value = "villeConverter",managed = true)
 public class VilleConverter implements Converter {
 
     @Inject
@@ -18,7 +18,7 @@ public class VilleConverter implements Converter {
     public Object getAsObject(FacesContext facesContext, UIComponent uiComponent, String value) {
         if (value != null && value.trim().length() > 0){
             for (Ville ville: giteBean.getAllVilles()){
-                if(ville.getCodeInsee().equals(value)){
+                if(ville.getCodeInsee() == value){
                     return ville;
                 }
             }
@@ -29,6 +29,6 @@ public class VilleConverter implements Converter {
     @Override
     public String getAsString(FacesContext facesContext, UIComponent uiComponent, Object object) {
         Ville ville = (Ville) object;
-        return String.valueOf(ville.getCodeInsee());
+        return (ville.getCodeInsee());
     }
 }

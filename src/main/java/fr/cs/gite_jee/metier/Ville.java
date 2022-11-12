@@ -3,6 +3,8 @@ package fr.cs.gite_jee.metier;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.Objects;
+
 public class Ville {
 
     private String nom;
@@ -74,5 +76,18 @@ public class Ville {
 
     public void setDepartement(Departement departement) {
         this.departement = departement;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ville ville = (Ville) o;
+        return codeInsee.equals(ville.codeInsee);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codeInsee);
     }
 }
