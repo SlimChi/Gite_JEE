@@ -1,0 +1,57 @@
+
+’
+java:S1319T"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‰¸İ–üÿÿÿÿ8ğ‚¦Æ0
+‹
+java:S1319X"nThe type of "allEquipements" should be an interface such as "List" rather than the implementation "ArrayList".(Ë³‘ 8ğ‚¦Æ0
+
+java:S1319d"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ûµ¡Ì8ñ‚¦Æ0
+”
+java:S1319h"rThe type of "allTypeEquipements" should be an interface such as "List" rather than the implementation "ArrayList".(†Ÿ¢úÿÿÿÿ8ñ‚¦Æ0
+’
+java:S1319t"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‚›Ù–úÿÿÿÿ8ñ‚¦Æ0
+‹
+java:S1319x"iThe type of "allVilles" should be an interface such as "List" rather than the implementation "ArrayList".(Ø‹é›üÿÿÿÿ8ñ‚¦Æ0
+
+java:S1319„"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ü£°ë8ñ‚¦Æ0
+Œ
+java:S1319ˆ"iThe type of "allRegion" should be an interface such as "List" rather than the implementation "ArrayList".(ıüÿÿÿÿÿ8ò‚¦Æ0
+
+java:S1319”"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ğê…Ì8ò‚¦Æ0
+‘
+java:S1319˜"nThe type of "allDepartement" should be an interface such as "List" rather than the implementation "ArrayList".(ó»¡¤şÿÿÿÿ8ò‚¦Æ0
+
+java:S1319¤"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(…áà±8ò‚¦Æ0
+†
+java:S1319¨"hThe type of "allGites" should be an interface such as "List" rather than the implementation "ArrayList".(Àñ±ô8ò‚¦Æ0
+
+java:S1319´"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(´®¿Ô8ó‚¦Æ0
+
+java:S1319¸"pThe type of "allGitesSelected" should be an interface such as "List" rather than the implementation "ArrayList".(ù·»z8ó‚¦Æ0
+V
+java:S1948"4Make "equipementSelected" transient or serializable.(Ñ»ôøÿÿÿÿ8€ƒ¦Æ0
+Z
+java:S1948"8Make "typeEquipementSelected" transient or serializable.(›÷¨üÿÿÿÿ8€ƒ¦Æ0
+Q
+java:S1948"/Make "villeSelected" transient or serializable.(› ß¿ıÿÿÿÿ8ƒ¦Æ0
+R
+java:S1948"0Make "regionSelected" transient or serializable.(Ñ·ù¢ÿÿÿÿÿ8ƒ¦Æ0
+W
+java:S1948!"5Make "departementSelected" transient or serializable.(Šä»ÿÿÿÿÿ8ƒ¦Æ0
+G
+java:S1948#"*Make "allGites" transient or serializable.(ËÍƒ8ƒ¦Æ0
+N
+java:S1948$"2Make "allGitesSelected" transient or serializable.(İù¥8ƒ¦Æ0
+K
+java:S1948%".Make "giteSelected" transient or serializable.(¾×¿û8ƒ¦Æ0
+J
+java:S1948'"-Make "serviceGite" transient or serializable.(ª±‹Ç8‚ƒ¦Æ0
+I
+java:S1948)",Make "giteSearch" transient or serializable.(÷†™ü8‚ƒ¦Æ0
+X
+java:S26963"6Make the enclosing method "static" or remove this set.(¾ÔÊ§üÿÿÿÿ8†ƒ¦Æ0
+`
+java:S11176">Rename "giteSearch" which hides the field declared at line 41.(íÎñ½ûÿÿÿÿ8‡ƒ¦Æ0
+L
+java:S1068'"/Remove this unused "serviceGite" private field.(ª±‹Ç8“ƒ¦Æ0
+K
+java:S1068)".Remove this unused "giteSearch" private field.(÷†™ü8“ƒ¦Æ0

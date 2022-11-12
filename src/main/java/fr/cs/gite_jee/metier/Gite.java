@@ -235,4 +235,6 @@ public class Gite {
     public void setLocaliteSaisonPeriodes(ArrayList<LocaliteSaisonPeriode> localiteSaisonPeriodes) {
         this.localiteSaisonPeriodes = localiteSaisonPeriodes;
     }
+
+
 }
