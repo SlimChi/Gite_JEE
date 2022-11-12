@@ -21,13 +21,35 @@
 
 .card {
     margin: 1%;
+    padding: 50px;
+    border-radius: 8px;
+    position: center;
+    transition: 0.3s all;
+    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);
+    width: 70%;
+}
+.card2 {
+    margin: 1%;
     padding: 30px;
     border-radius: 8px;
     position: center;
     transition: 0.3s all;
     box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);
 }
-
+.card2:hover{
+    transform: scale(1.05);
+}
+.card-menu{
+    margin: 1%;
+    padding: 30px;
+    border-radius: 8px;
+    position: center;
+    transition: 0.3s all;
+    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);
+}
+.card-menu:hover{
+    transform: scale(1.05);
+}
 .card:hover {
     transform: scale(1.05);
 }
