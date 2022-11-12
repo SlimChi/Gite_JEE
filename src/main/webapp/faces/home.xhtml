@@ -18,7 +18,7 @@
                         xmlns:h="http://xmlns.jcp.org/jsf/html">
             <ui:define name="contenu">
 
-                <div class="card">
+                <div class="content">
                     <h:form id="form">
                         <p:dataView var="product" value="#{giteBean.allGites}" rows="12" paginator="true" paginatorPosition="bottom"
                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
@@ -26,7 +26,7 @@
                                     layout="grid" gridRowStyleClass="lg:col-6 xl:col-4" flex="true">
 
                             <p:dataViewGridItem>
-                                <div class="content">
+                                <div class="card">
                                     <div class="product-grid-item-top">
                                         <div>
                                             <span class="product-category">#{product.nom}</span>
@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="product-grid-item-content">
 
-                                        <img alt="no image" src="http://localhost:8080/Gite/faces/gite1.jpg" style="width:300px; height:200px"/>
+                                        <img alt="no image" src="http://localhost:8080/Gite/faces/b2.jpg" style="width:320px; height:200px"/>
                                         <div class="product-name1" style="font-weight: bold">Chambre : #{product.nombreChambre}</div>
                                         <div class="product-description1" style="font-weight: bold">Couchage :#{product.nombreCouchage}</div>
                                         <div class="product-price">
@@ -55,9 +55,9 @@
 
                             <p:dataViewListItem>
 
-                                <div class="product-list-item"  >
+                                <div class="card"  >
                                     <div class="product-list-detail" >
-                                        <img class="image2" alt="no image" src="http://localhost:8080/Gite/faces/gite1.jpg" style="width:300px; height:200px"/>
+                                        <img class="image2" alt="no image" src="http://localhost:8080/Gite/faces/b0.jpg" style="width:300px; height:200px"/>
                                         <div class="detail-right">
                                             <div class="product-name2">#{product.nom}</div>
                                             <div class="product-description2">Couchage :#{product.nombreCouchage}</div>
@@ -67,11 +67,11 @@
                                                 <h:outputText value="#{product.surfaceHabitable}" styleClass="product-price2" >
                                                     <f:convertNumber currencySymbol="$" type="currency"/>
                                                 </h:outputText>
-                                                <p:commandButton type="button2" style="float: right; margin-left: 350px"
-                                                                                       value="Détails"
-                                                                                       icon="pi pi-shopping-cart"
-                                            >
-                                            </p:commandButton>
+                                                <p:commandButton type="button2" style="float: right; margin-left: 65px"
+                                                                 value="Détails"
+                                                                 icon="pi pi-shopping-cart"
+                                                >
+                                                </p:commandButton>
                                             </div>
 
 
