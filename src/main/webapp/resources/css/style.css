@@ -3,13 +3,17 @@
 }
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1500px) {
     .content {
         flex-direction: column;
         width: 100%;
     }
 }
-
+@media screen and (max-width: 250px) {
+    .image1 {
+        width: 50%;
+    }
+}
 
 .content {
     margin: 5%;
@@ -62,18 +66,30 @@
 
 @media screen and (max-width: 1240px) {
     .card {
-        width: 100%;
+        width: 90%;
     }
+
 }
 
-
-
 img {
-    width: 300px;
+    width: 300px ;
     border-radius: 8px;
     margin-top: 15px;
     margin-bottom: 15px;
-    position: relative;
+    margin-right: 150px;
+
+}
+@media (max-width:1622px){
+    img {
+    width: 98%;
+
+    }
+}
+@media (max-width:991px){
+    img {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 .pad-top {
@@ -115,3 +131,4 @@ img {
     color: darkred;
 
 }
+

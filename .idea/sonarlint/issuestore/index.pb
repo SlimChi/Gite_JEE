@@ -13,3 +13,27 @@ Q
 !src/main/webapp/WEB-INF/beans.xml,8\3\83008b1a88ba03a2548bb5b9ad0768c6c307d36c
 i
 9src/main/java/fr/cs/gite_jee/converter/GiteConverter.java,d\c\dc903ba0c7eb6202d9e54543e977c0ccb165299d
+O
+src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392
+k
+;src/main/java/fr/cs/gite_jee/converter/RegionConverter.java,2\f\2f6531cb6e6b6cf3a5b751d67820589cfaff67a6
+o
+?src/main/java/fr/cs/gite_jee/converter/EquipementConverter.java,c\2\c29302a077504852f0fceb08a33a106e0c48227c
+s
+Csrc/main/java/fr/cs/gite_jee/converter/TypeEquipementConverter.java,0\9\097aab5e1f0cef269ca2219032b65fe9a32fd39f
+c
+3src/main/java/fr/cs/gite_jee/metier/SaisonGite.java,7\f\7fba7c8385b3b3f7651bafd70b1b13522a99c307
+d
+4src/main/java/fr/cs/gite_jee/service/GiteSearch.java,e\9\e9f7897e8e887fa9624b87db7fcdb40c370daadd
+d
+4src/main/java/fr/cs/gite_jee/metier/Departement.java,c\4\c4a66e617181104b7510898fafb9c18cd463058f
+]
+-src/main/java/fr/cs/gite_jee/dao/GiteDAO.java,7\4\74ab3c76120ae92a41474c660e74c38745b7d71f
+_
+/src/main/java/fr/cs/gite_jee/bean/GiteBean.java,1\c\1ceef4aa42d91120c65155ea67d54ce75d09032e
+^
+.src/main/java/fr/cs/gite_jee/metier/Ville.java,0\b\0b7a1a05ffc2024ac91901fdd13ef6cf583a6689
+j
+:src/main/java/fr/cs/gite_jee/converter/VilleConverter.java,7\1\7155794a02b03eb72003155e210832c828721bf6
+Z
+*src/main/webapp/faces/templates/menu.xhtml,d\6\d6f7c1d176485b31b3c7d77abe77f25ed0182cf6

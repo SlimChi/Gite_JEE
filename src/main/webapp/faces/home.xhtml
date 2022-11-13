@@ -20,10 +20,6 @@
             <ui:define name="contenu">
 
                 <div class="content">
-<!--                    <script src="https://maps.google.com/maps/api/js?sensor=false" type=""></script>-->
-<!--                    -->
-<!--                        <p:gmap  center="36.890257,30.707417" zoom="13" type="HYBRID" style="width:50%;height:800px"-->
-<!--                                model="#{markersView.simpleModel}"/>-->
 
                     <h:form id="form">
                         <p:panelGrid columns="5" styleClass="customPanelGrid" layout="grid"
@@ -50,11 +46,12 @@
                                         </div>
                                     </div>
                                     <div class="product-grid-item-content">
+                                    <div  class="image1" >
+                                        <img alt="no image" src="http://localhost:8080/Gite/faces/b2.jpg"/>
+                                    </div>
 
-                                        <img class="image1" alt="no image" src="http://localhost:8080/Gite/faces/b2.jpg"
-                                            />
                                         <div class="product-name1"
-                                             style="font-weight: bold">Ville : #{product.ville.departement.nomDepartement}</div>
+                                             style="font-weight: bold">#{product.ville.departement.nomDepartement}</div>
                                         <div class="product-description1"
                                              style="font-weight: bold">Couchage :#{product.nombreCouchage}</div>
                                         <div class="product-price">
@@ -62,7 +59,7 @@
                                                           styleClass="product-price">
                                                 <f:convertNumber currencySymbol="$" type="currency"/>
                                             </h:outputText>
-                                            <p:commandButton type="button1" style="margin-left: 120px"
+                                            <p:commandButton type="button1" style="float: right"
                                                              value="Détails"
                                                              icon="pi pi-shopping-cart"
                                             >
@@ -84,7 +81,7 @@
                                             <div class="product-name2">#{product.nom}</div>
                                             <div class="product-description2">Couchage :#{product.nombreCouchage}</div>
                                             <span
-                                                    class="product-category2">Chambre :#{product.nombreChambre}</span>
+                                                    class="product-category2">#{product.ville.departement.nomDepartement}</span>
                                             <div class="product-price2">
                                                 <h:outputText value="#{product.surfaceHabitable}"
                                                               styleClass="product-price2">
