@@ -64,19 +64,15 @@ public class GiteDAO extends DAO<Gite, GiteSearch> {
 
         ResultSet rs;
         ArrayList<Gite> liste = new ArrayList<>();
-        String procedureStockee = "{call SP_GITE_QBE(?,?,?,?,?,?)}";
+        String procedureStockee = "{call SP_GITE_QBE(?,?)}";
 
         try (CallableStatement cStmt = this.connexion.prepareCall(procedureStockee)) {
 
 
 
-            cStmt.setString(1, giteSearch.getNomDuGite());
-            cStmt.setInt(2, giteSearch.getEquipement().getId());
-            cStmt.setInt(3, giteSearch.getTypeEquipement().getId());
+            cStmt.setString(1, giteSearch.getIdEquipements());
+            cStmt.setInt(2, giteSearch.getNbEquipements());
 
-            cStmt.setInt(4, giteSearch.getRegion().getId());
-            cStmt.setString(5, giteSearch.getDepartement().getCodeInseeDept());
-            cStmt.setString(6, giteSearch.getVille().getCodeInsee());
 
 
             cStmt.execute();
@@ -88,28 +84,41 @@ public class GiteDAO extends DAO<Gite, GiteSearch> {
 
                 gite.setId(rs.getInt(1));
                 gite.setNom(rs.getString(2));
-                gite.setNombreCouchage(rs.getInt(3));
-                gite.setSurfaceHabitable(rs.getInt(4));
-                gite.setCodeInsee(rs.getString(5));
-                gite.setCodeInseeDept(rs.getString(6));
+                gite.setNombreCouchage(rs.getInt(5));
 
                 Ville ville = new Ville();
-                ville.setCodeInsee(rs.getString(5));
-                ville.setCodeInseeDept(rs.getString(6));
-                ville.setNom(rs.getString(7));
-                ville.setLatitude(rs.getFloat(8));
-                ville.setLongitude(rs.getFloat(9));
+                ville.setNom(rs.getString(3));
 
                 Departement departement = new Departement();
-                departement.setNomDepartement(rs.getString(10));
-                departement.setCodeInseeDept(rs.getString(6));
+                departement.setNomDepartement(rs.getString(4));
 
-                Region region = new Region();
-                region.setId(rs.getInt(11));
-                region.setNom(rs.getString(12));
-                departement.setRegion(region);
                 ville.setDepartement(departement);
                 gite.setVille(ville);
+
+//                gite.setId(rs.getInt(1));
+//                gite.setNom(rs.getString(2));
+//                gite.setNombreCouchage(rs.getInt(3));
+//                gite.setSurfaceHabitable(rs.getInt(4));
+//                gite.setCodeInsee(rs.getString(5));
+//                gite.setCodeInseeDept(rs.getString(6));
+//
+//                Ville ville = new Ville();
+//                ville.setCodeInsee(rs.getString(5));
+//                ville.setCodeInseeDept(rs.getString(6));
+//                ville.setNom(rs.getString(7));
+//                ville.setLatitude(rs.getFloat(8));
+//                ville.setLongitude(rs.getFloat(9));
+//
+//                Departement departement = new Departement();
+//                departement.setNomDepartement(rs.getString(10));
+//                departement.setCodeInseeDept(rs.getString(6));
+//
+//                Region region = new Region();
+//                region.setId(rs.getInt(11));
+//                region.setNom(rs.getString(12));
+//                departement.setRegion(region);
+//                ville.setDepartement(departement);
+//                gite.setVille(ville);
 
                 liste.add(gite);
 

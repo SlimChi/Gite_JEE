@@ -29,14 +29,26 @@
                         <p:panelGrid columns="5" styleClass="customPanelGrid" layout="grid"
                                      contentStyleClass="ui-fluid">
 
-                            <p:selectOneMenu id="comboEquipement" value="#{giteBean.equipementSelected}"
-                                             dynamic="true">
-                                <f:selectItems value="#{giteBean.allEquipements}"/>
-                                <f:converter converterId="equipementConverter"/>
-                            </p:selectOneMenu>
+
+
+                            <p:selectManyMenu id="advanced" value="#{giteBean.listEquipementSelected}"
+                                              converter="equipementConverter"
+                                              var="e" filter="true" filterMatchMode="contains" showCheckbox="true" styleClass="manymenu-advanced">
+                                <f:selectItems value="#{giteBean.allEquipements}" var="equipement" itemLabel="#{equipement.libelle}"
+                                               itemValue="#{equipement}"/>
+
+
+                                <p:column>
+                                    <h:outputText value="#{e.libelle}"/>
+                                </p:column>
+                            </p:selectManyMenu>
+
+                            <p:commandButton value="filtrer" update=":form:dataViewGites" actionListener="#{giteBean.filtrer}"/>
+
+
 
                         </p:panelGrid>
-                        <p:dataView var="product" value="#{giteBean.allGites}" rows="5" paginator="true"
+                        <p:dataView id="dataViewGites" var="product" value="#{giteBean.allGites}" rows="5" paginator="true"
                                     paginatorPosition="bottom"
                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                                     gridIcon="pi pi-th-large" listIcon="pi pi-bars"

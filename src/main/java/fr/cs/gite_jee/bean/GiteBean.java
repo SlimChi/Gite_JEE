@@ -20,6 +20,8 @@ public class GiteBean implements Serializable {
     private static ArrayList<Equipement> allEquipements;
     private Equipement equipementSelected;
 
+    private ArrayList<Equipement> listEquipementSelected;
+
     private static ArrayList<TypeEquipement> allTypeEquipements;
     private TypeEquipement typeEquipementSelected;
 
@@ -54,32 +56,53 @@ public class GiteBean implements Serializable {
        allEquipements.add(0,equipement);
 
         GiteSearch giteSearch = new GiteSearch();
-        giteSearch.setNomDuGite("");
-        Equipement e = new Equipement();
-        e.setId(0);
-        giteSearch.setEquipement(e);
 
-        TypeEquipement typeEquipement = new TypeEquipement();
-        typeEquipement.setId(0);
-        giteSearch.setTypeEquipement(typeEquipement);
 
-        Region region = new Region();
-        region.setId(0);
-        giteSearch.setRegion(region);
-
-        Ville ville = new Ville();
-        ville.setCodeInsee("");
-        giteSearch.setVille(ville);
-
-        Departement departement = new Departement();
-        departement.setCodeInseeDept("");
-        giteSearch.setDepartement(departement);
 
 
         allGites= DaoFactory.getGiteDAO().getLike(giteSearch);
 
     }
 
+    public void filtrer(){
+
+        GiteSearch gs= new GiteSearch();
+
+        if(listEquipementSelected.size() != 0){
+            gs.setNbEquipements(listEquipementSelected.size());
+            gs.setIdEquipements(equipementToString());
+        }
+
+
+
+        allGites = DaoFactory.getGiteDAO().getLike(gs);
+
+
+        listEquipementSelected = null;
+    }
+
+    private String equipementToString(){
+
+        int nb = listEquipementSelected.size();
+        StringBuilder stringBuilder = new StringBuilder("");
+
+        if( nb> 1){
+
+            for(int i=0;i<nb;i++){
+                if(i != (nb-1)){
+                    stringBuilder.append(listEquipementSelected.get(i).getId()+",");
+                }else{
+                    stringBuilder.append(listEquipementSelected.get(i).getId());
+                }
+            }
+
+        }else{
+            stringBuilder.append(listEquipementSelected.get(0).getId());
+        }
+
+
+        return stringBuilder.toString();
+    }
 
     public ArrayList<Equipement> getAllEquipements() {
         return allEquipements;
@@ -183,5 +206,13 @@ public class GiteBean implements Serializable {
 
     public void setAllGitesSelected(ArrayList<Gite> allGitesSelected) {
         this.allGitesSelected = allGitesSelected;
+    }
+
+    public ArrayList<Equipement> getListEquipementSelected() {
+        return listEquipementSelected;
+    }
+
+    public void setListEquipementSelected(ArrayList<Equipement> listEquipementSelected) {
+        this.listEquipementSelected = listEquipementSelected;
     }
 }

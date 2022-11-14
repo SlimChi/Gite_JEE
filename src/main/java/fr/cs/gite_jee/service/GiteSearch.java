@@ -17,6 +17,10 @@ public class GiteSearch {
 
     private Region region;
 
+    private String idEquipements;
+
+    private int nbEquipements;
+
     public GiteSearch(){
         equipement = new Equipement();
         typeEquipement = new TypeEquipement();
@@ -81,5 +85,19 @@ public class GiteSearch {
         this.region = region;
     }
 
+    public String getIdEquipements() {
+        return idEquipements;
+    }
 
+    public void setIdEquipements(String idEquipements) {
+        this.idEquipements = idEquipements;
+    }
+
+    public int getNbEquipements() {
+        return nbEquipements;
+    }
+
+    public void setNbEquipements(int nbEquipements) {
+        this.nbEquipements = nbEquipements;
+    }
 }
