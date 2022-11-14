@@ -3,15 +3,10 @@
 }
 
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 991px) {
     .content {
         flex-direction: column;
-        width: 100%;
-    }
-}
-@media screen and (max-width: 250px) {
-    .image1 {
-        width: 50%;
+        width: 98%;
     }
 }
 
@@ -87,8 +82,7 @@ img {
 }
 @media (max-width:991px){
     img {
-        width: 200px;
-        height: 200px;
+        width: 95%;
     }
 }
 

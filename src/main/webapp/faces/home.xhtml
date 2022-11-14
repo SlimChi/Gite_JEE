@@ -20,7 +20,17 @@
             <ui:define name="contenu">
 
                 <div class="content">
-
+<!--                    <script src="https://maps.google.com/maps/api/js?sensor=false" type=""></script>-->
+<!--                    -->
+<!--                        <p:gmap  center="36.890257,30.707417" zoom="13" type="HYBRID" style="width:50%;height:800px"-->
+<!--                                model="#{markersView.simpleModel}"/>-->
+                    <div class="card">
+                        <p:contentFlow value="#{imageView.images}" var="image">
+                            <p:graphicImage library="faces" name="#{image}" />
+                            <div class="caption">#{image}</div>
+                        </p:contentFlow>
+                    </div>
+                    
                     <h:form id="form">
                         <p:panelGrid columns="5" styleClass="customPanelGrid" layout="grid"
                                      contentStyleClass="ui-fluid">
