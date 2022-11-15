@@ -6,7 +6,10 @@ import fr.cs.gite_jee.service.GiteSearch;
 import fr.cs.gite_jee.service.ServiceGite;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
+import org.primefaces.PrimeFaces;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -182,7 +185,39 @@ public class GiteBean implements Serializable {
 
         return stringBuilder.toString();
     }
+    public void NouveauGite() {
+        giteSelected = new Gite();
 
+    }
+
+    public void deleteGite() {
+        DaoFactory.getGiteDAO().delete(giteSelected);
+        this.giteSelected = null;
+
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Product Removed"));
+        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
+        PrimeFaces.current().ajax().update("form:gites");
+
+    }
+
+    public void saveGite() {
+        if (giteSelected.getId() == 0) {
+            try{
+                DaoFactory.getGiteDAO().insert(giteSelected);
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Gite ajouté"));
+            } catch (Exception e){
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Erreur! gite non ajouté"));
+            }
+
+        }
+        else {
+            DaoFactory.getGiteDAO().update(giteSelected);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Article mis à jour"));
+        }
+        PrimeFaces.current().ajax().update("form:gites");
+        PrimeFaces.current().executeScript("PF('manageProductDialog').hide()");
+
+    }
     public ArrayList<Departement> getListDepartementSelected() {
         return listDepartementSelected;
     }

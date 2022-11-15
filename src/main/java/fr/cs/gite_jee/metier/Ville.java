@@ -96,16 +96,5 @@ public class Ville {
         this.departement = departement;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Ville ville = (Ville) o;
-        return codeInsee.equals(ville.codeInsee);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(codeInsee);
-    }
 }
