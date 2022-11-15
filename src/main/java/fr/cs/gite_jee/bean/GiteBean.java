@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class GiteBean implements Serializable {
 
 
-
     private static ArrayList<Equipement> allEquipements;
     private Equipement equipementSelected;
 
@@ -52,27 +51,24 @@ public class GiteBean implements Serializable {
         equipement.setLibelle("Choisir un equipement");
         equipement.setId(0);
 
-       allEquipements = DaoFactory.getEquipementDAO().getAll();
-       allEquipements.add(0,equipement);
+        allEquipements = DaoFactory.getEquipementDAO().getAll();
+        allEquipements.add(0, equipement);
 
         GiteSearch giteSearch = new GiteSearch();
 
 
-
-
-        allGites= DaoFactory.getGiteDAO().getLike(giteSearch);
+        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
 
     }
 
-    public void filtrer(){
+    public void filtrer() {
 
-        GiteSearch gs= new GiteSearch();
+        GiteSearch gs = new GiteSearch();
 
-        if(listEquipementSelected.size() != 0){
+        if (listEquipementSelected.size() != 0) {
             gs.setNbEquipements(listEquipementSelected.size());
             gs.setIdEquipements(equipementToString());
         }
-
 
 
         allGites = DaoFactory.getGiteDAO().getLike(gs);
@@ -81,22 +77,34 @@ public class GiteBean implements Serializable {
         listEquipementSelected = null;
     }
 
-    private String equipementToString(){
+
+    public void reset() {
+        init();
+        giteSearch = new GiteSearch();
+
+        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
+        Equipement equipement = new Equipement();
+        equipement.setLibelle("Choisir un equipement");
+        equipement.setId(0);
+
+    }
+
+    private String equipementToString() {
 
         int nb = listEquipementSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
 
-        if( nb> 1){
+        if (nb > 1) {
 
-            for(int i=0;i<nb;i++){
-                if(i != (nb-1)){
-                    stringBuilder.append(listEquipementSelected.get(i).getId()+",");
-                }else{
+            for (int i = 0; i < nb; i++) {
+                if (i != (nb - 1)) {
+                    stringBuilder.append(listEquipementSelected.get(i).getId() + ",");
+                } else {
                     stringBuilder.append(listEquipementSelected.get(i).getId());
                 }
             }
 
-        }else{
+        } else {
             stringBuilder.append(listEquipementSelected.get(0).getId());
         }
 
