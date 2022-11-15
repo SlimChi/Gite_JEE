@@ -2,8 +2,11 @@ package fr.cs.gite_jee.dao;
 
 
 import fr.cs.gite_jee.metier.Departement;
+import fr.cs.gite_jee.metier.Region;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class DepartementDAO extends DAO<Departement,Departement> {
@@ -19,7 +22,28 @@ public class DepartementDAO extends DAO<Departement,Departement> {
 
     @Override
     public ArrayList<Departement> getAll() {
-        return null;
+
+        ArrayList<Departement> liste = new ArrayList<>();
+        try (Statement stmt = connexion.createStatement()){
+
+            String strCmd ="select * from DEPARTEMENT as d join REGION as r on r.ID_REGION = d.ID_REGION";
+            ResultSet rs = stmt.executeQuery(strCmd);
+
+            while (rs.next()){
+                Region region = new Region();
+                region.setId(rs.getInt(3));
+                region.setNom(rs.getString(5));
+                Departement departement = new Departement(rs.getString(1),rs.getString(2),rs.getInt(3));
+                departement.setRegion(region);
+
+                liste.add(departement);
+
+            }rs.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return liste;
     }
 
     @Override

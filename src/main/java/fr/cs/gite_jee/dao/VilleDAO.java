@@ -7,6 +7,7 @@ import fr.cs.gite_jee.metier.Ville;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class VilleDAO extends DAO<Ville, Ville> {
@@ -23,7 +24,26 @@ public class VilleDAO extends DAO<Ville, Ville> {
 
     @Override
     public ArrayList<Ville> getAll() {
-        return null;
+       ArrayList<Ville> liste =new ArrayList<>();
+       try (Statement stmt = connexion.createStatement()){
+
+           String strCmd = "select * from ville as v join DEPARTEMENT as d on d.CODE_INSEE_DEPT = v.CODE_INSEE_DEPT ";
+           ResultSet rs = stmt.executeQuery(strCmd);
+
+           while (rs.next()){
+             Departement departement =new Departement();
+             departement.setCodeInseeDept(rs.getString(1));
+             Ville ville = new Ville(rs.getString(2), rs.getString(3), rs.getFloat(4), rs.getFloat(5),rs.getString(7));
+             ville.setDepartement(departement);
+
+             liste.add(ville);
+
+           }rs.close();
+
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+       return liste;
     }
 
     @Override

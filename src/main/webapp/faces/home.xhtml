@@ -47,6 +47,37 @@
 
                             </p:selectCheckboxMenu>
 
+                            <p:selectCheckboxMenu id="advance" value="#{giteBean.listRegionSelected}"
+                                                  label="Region" style="width: 15rem; border-radius: 15px"
+                                                  filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"
+                                                  scrollHeight="250"
+                                                  dynamic="true">
+                                <f:selectItems value="#{giteBean.allRegion}" var="region"
+                                               itemLabel="#{region.nom}"
+                                               itemValue="#{region}"/>
+
+                            </p:selectCheckboxMenu>
+
+                            <p:selectCheckboxMenu id="advanc" value="#{giteBean.listDepartementSelected}"
+                                                  label="Departement" style="width: 15rem; border-radius: 15px"
+                                                  filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"
+                                                  scrollHeight="250"
+                                                  dynamic="true">
+                                <f:selectItems value="#{giteBean.allDepartement}" var="departement"
+                                               itemLabel="#{departement.nomDepartement}"
+                                               itemValue="#{departement}"/>
+                            </p:selectCheckboxMenu>
+
+                            <p:selectCheckboxMenu id="advan" value="#{giteBean.listVilleSelected}"
+                                                  label="Ville" style="width: 15rem; border-radius: 15px"
+                                                  filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"
+                                                  scrollHeight="250"
+                                                  dynamic="true">
+                                <f:selectItems value="#{giteBean.allVilles}" var="ville"
+                                               itemLabel="#{ville.nom}"
+                                               itemValue="#{ville}"/>
+                            </p:selectCheckboxMenu>
+
                             <p:commandButton value="filtrer" update=":form:dataViewGites" actionListener="#{giteBean.filtrer}"/>
                             <p:commandButton value="reset" update=":form:dataViewGites" actionListener="#{giteBean.reset}"/>
 
@@ -78,7 +109,7 @@
                                         <div class="product-description2"
                                              style="font-weight: bold">#{product.adresse}</div>
                                         <div class="product-price">
-                                            <h:outputText value="#{product.surfaceHabitable}"
+                                            <h:outputText value="#{product.adresse}"
                                                           styleClass="product-price">
                                                 <f:convertNumber currencySymbol="$" type="currency"/>
                                             </h:outputText>

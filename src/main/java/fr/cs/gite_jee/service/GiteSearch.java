@@ -15,7 +15,15 @@ public class GiteSearch {
 
     private Departement departement;
 
+    private String idDepartement;
+
+    private int nbDepartement;
+
     private Region region;
+
+    private String idRegion;
+
+    private int nbRegion;
 
     private String idEquipements;
 
@@ -99,5 +107,37 @@ public class GiteSearch {
 
     public void setNbEquipements(int nbEquipements) {
         this.nbEquipements = nbEquipements;
+    }
+
+    public String getIdRegion() {
+        return idRegion;
+    }
+
+    public void setIdRegion(String idRegion) {
+        this.idRegion = idRegion;
+    }
+
+    public int getNbRegion() {
+        return nbRegion;
+    }
+
+    public void setNbRegion(int nbRegion) {
+        this.nbRegion = nbRegion;
+    }
+
+    public String getIdDepartement() {
+        return idDepartement;
+    }
+
+    public void setIdDepartement(String idDepartement) {
+        this.idDepartement = idDepartement;
+    }
+
+    public int getNbDepartement() {
+        return nbDepartement;
+    }
+
+    public void setNbDepartement(int nbDepartement) {
+        this.nbDepartement = nbDepartement;
     }
 }

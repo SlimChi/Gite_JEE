@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class GiteBean implements Serializable {
 
 
+
     private static ArrayList<Equipement> allEquipements;
     private Equipement equipementSelected;
-
     private ArrayList<Equipement> listEquipementSelected;
 
     private static ArrayList<TypeEquipement> allTypeEquipements;
@@ -26,12 +26,15 @@ public class GiteBean implements Serializable {
 
     private static ArrayList<Ville> allVilles;
     private Ville villeSelected;
+    private ArrayList<Ville> listVilleSelected;
 
     private static ArrayList<Region> allRegion;
     private Region regionSelected;
+    private ArrayList<Region> listRegionSelected;
 
     private static ArrayList<Departement> allDepartement;
     private Departement departementSelected;
+    private ArrayList<Departement> listDepartementSelected;
 
     private ArrayList<Gite> allGites;
     private ArrayList<Gite> allGitesSelected;
@@ -52,22 +55,55 @@ public class GiteBean implements Serializable {
         equipement.setId(0);
 
         allEquipements = DaoFactory.getEquipementDAO().getAll();
-        allEquipements.add(0, equipement);
+        allEquipements.add(0,equipement);
+
+        Region region = new Region();
+        region.setNom("Choisir une region");
+        region.setId(0);
+
+
+        allRegion = DaoFactory.getRegionDAO().getAll();
+        allRegion.add(0, region);
+
+        Departement departement = new Departement();
+        departement.setNomDepartement("Choisir un departement");
+        departement.setCodeInseeDept("");
+
+        allDepartement = DaoFactory.getDepartementDAO().getAll();
+        allDepartement.add(0,departement);
+
+        Ville ville = new Ville();
+        ville.setNom("Choisir une ville");
+
+
+        allVilles = DaoFactory.getVilleDAO().getAll();
+        allVilles.add(0,ville);
+
 
         GiteSearch giteSearch = new GiteSearch();
 
 
-        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
+        allGites= DaoFactory.getGiteDAO().getLike(giteSearch);
 
     }
 
-    public void filtrer() {
+    public void filtrer(){
 
-        GiteSearch gs = new GiteSearch();
+        GiteSearch gs= new GiteSearch();
 
-        if (listEquipementSelected.size() != 0) {
+        if(listEquipementSelected.size() != 0){
             gs.setNbEquipements(listEquipementSelected.size());
             gs.setIdEquipements(equipementToString());
+        }
+
+        if (listRegionSelected.size() != 0){
+            gs.setNbRegion(listRegionSelected.size());
+            gs.setIdRegion(regionToString());
+        }
+
+        if (listDepartementSelected.size() != 0){
+            gs.setNbDepartement(listDepartementSelected.size());
+            gs.setIdDepartement(departementToString());
         }
 
 
@@ -75,8 +111,9 @@ public class GiteBean implements Serializable {
 
 
         listEquipementSelected = null;
+        listRegionSelected = null;
+        listDepartementSelected =null;
     }
-
 
     public void reset() {
         init();
@@ -89,27 +126,69 @@ public class GiteBean implements Serializable {
 
     }
 
-    private String equipementToString() {
+    private String departementToString(){
+        int nb = listDepartementSelected.size();
+        StringBuilder stringBuilder = new StringBuilder("");
+        if (nb> 1 ){
+            for (int i=0; i<nb;i++){
+                if (i != (nb -1)) {
+                    stringBuilder.append(listDepartementSelected.get(i).getCodeInseeDept()+"");
+                }else {
+                    stringBuilder.append(listDepartementSelected.get(i).getCodeInseeDept());
+                }
+            }
+        }else {
+            stringBuilder.append(listDepartementSelected.get(0).getCodeInseeDept());
+        }
+        return stringBuilder.toString();
+    }
+
+    private String regionToString(){
+        int nb = listRegionSelected.size();
+        StringBuilder stringBuilder = new StringBuilder("");
+        if (nb> 1){
+            for (int i=0; i<nb;i++){
+                if (i != (nb - 1)) {
+                    stringBuilder.append(listRegionSelected.get(i).getId()+",");
+                }else{
+                    stringBuilder.append(listRegionSelected.get(i).getId());
+                }
+            }
+        }else {
+            stringBuilder.append(listRegionSelected.get(0).getId());
+        }
+        return stringBuilder.toString();
+    }
+
+    private String equipementToString(){
 
         int nb = listEquipementSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
 
-        if (nb > 1) {
+        if( nb> 1){
 
-            for (int i = 0; i < nb; i++) {
-                if (i != (nb - 1)) {
-                    stringBuilder.append(listEquipementSelected.get(i).getId() + ",");
-                } else {
+            for(int i=0;i<nb;i++){
+                if(i != (nb-1)){
+                    stringBuilder.append(listEquipementSelected.get(i).getId()+",");
+                }else{
                     stringBuilder.append(listEquipementSelected.get(i).getId());
                 }
             }
 
-        } else {
+        }else{
             stringBuilder.append(listEquipementSelected.get(0).getId());
         }
 
 
         return stringBuilder.toString();
+    }
+
+    public ArrayList<Departement> getListDepartementSelected() {
+        return listDepartementSelected;
+    }
+
+    public void setListDepartementSelected(ArrayList<Departement> listDepartementSelected) {
+        this.listDepartementSelected = listDepartementSelected;
     }
 
     public ArrayList<Equipement> getAllEquipements() {
@@ -120,12 +199,36 @@ public class GiteBean implements Serializable {
         GiteBean.allEquipements = allEquipements;
     }
 
+    public ArrayList<Region> getAllRegion() {
+        return allRegion;
+    }
+
+    public static void setAllRegion(ArrayList<Region> allRegion) {
+        GiteBean.allRegion = allRegion;
+    }
+
+    public ArrayList<Ville> getAllVilles() {
+        return allVilles;
+    }
+
+    public static void setAllVilles(ArrayList<Ville> allVilles) {
+        GiteBean.allVilles = allVilles;
+    }
+
     public Equipement getEquipementSelected() {
         return equipementSelected;
     }
 
     public void setEquipementSelected(Equipement equipementSelected) {
         this.equipementSelected = equipementSelected;
+    }
+
+    public Ville getVilleSelected() {
+        return villeSelected;
+    }
+
+    public void setVilleSelected(Ville villeSelected) {
+        this.villeSelected = villeSelected;
     }
 
     public ArrayList<TypeEquipement> getAllTypeEquipements() {
@@ -144,29 +247,6 @@ public class GiteBean implements Serializable {
         this.typeEquipementSelected = typeEquipementSelected;
     }
 
-    public ArrayList<Ville> getAllVilles() {
-        return allVilles;
-    }
-
-    public static void setAllVilles(ArrayList<Ville> allVilles) {
-        GiteBean.allVilles = allVilles;
-    }
-
-    public Ville getVilleSelected() {
-        return villeSelected;
-    }
-
-    public void setVilleSelected(Ville villeSelected) {
-        this.villeSelected = villeSelected;
-    }
-
-    public ArrayList<Region> getAllRegion() {
-        return allRegion;
-    }
-
-    public static void setAllRegion(ArrayList<Region> allRegion) {
-        GiteBean.allRegion = allRegion;
-    }
 
     public Region getRegionSelected() {
         return regionSelected;
@@ -222,5 +302,21 @@ public class GiteBean implements Serializable {
 
     public void setListEquipementSelected(ArrayList<Equipement> listEquipementSelected) {
         this.listEquipementSelected = listEquipementSelected;
+    }
+
+    public ArrayList<Region> getListRegionSelected() {
+        return listRegionSelected;
+    }
+
+    public void setListRegionSelected(ArrayList<Region> listRegionSelected) {
+        this.listRegionSelected = listRegionSelected;
+    }
+
+    public ArrayList<Ville> getListVilleSelected() {
+        return listVilleSelected;
+    }
+
+    public void setListVilleSelected(ArrayList<Ville> listVilleSelected) {
+        this.listVilleSelected = listVilleSelected;
     }
 }

@@ -18,7 +18,7 @@ public class VilleConverter implements Converter {
     public Object getAsObject(FacesContext facesContext, UIComponent uiComponent, String value) {
         if (value != null && value.trim().length() > 0){
             for (Ville ville: giteBean.getAllVilles()){
-                if(ville.getCodeInsee() == value){
+                if(ville.getCodeInsee().equals(value)){
                     return ville;
                 }
             }

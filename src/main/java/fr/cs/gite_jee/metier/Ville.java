@@ -22,9 +22,27 @@ public class Ville {
 
     public Ville(){
 
-        this.departement = new Departement();
-
     }
+
+    public Ville(String codeInsee,String nom,Float latitude, Float longitude, String codeInseeDept) {
+
+        this.codeInsee = codeInsee;
+        this.nom = nom;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.codeInseeDept = codeInseeDept;
+    }
+
+    public Ville(String codeInsee,String nom,Float latitude, Float longitude, Departement departement) {
+
+        this.codeInsee = codeInsee;
+        this.nom = nom;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.departement = departement;
+    }
+
+
 
     public String getNom() {
         return nom;
