@@ -102,6 +102,7 @@ public class GiteBean implements Serializable {
         if (listRegionSelected.size() != 0){
             gs.setNbRegion(listRegionSelected.size());
             gs.setIdRegion(regionToString());
+
         }
 
         if (listDepartementSelected.size() != 0){
@@ -135,7 +136,7 @@ public class GiteBean implements Serializable {
         if (nb> 1 ){
             for (int i=0; i<nb;i++){
                 if (i != (nb -1)) {
-                    stringBuilder.append(listDepartementSelected.get(i).getCodeInseeDept()+"");
+                    stringBuilder.append(listDepartementSelected.get(i).getCodeInseeDept()+",");
                 }else {
                     stringBuilder.append(listDepartementSelected.get(i).getCodeInseeDept());
                 }
