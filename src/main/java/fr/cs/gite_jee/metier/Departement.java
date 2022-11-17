@@ -15,23 +15,24 @@ public class Departement {
 
     private Region region;
 
-    public Departement() {
 
+    public Departement() {
+        codeInseeDept = "";
+        region = new Region();
     }
 
-    public Departement(String codeInseeDept, String nomDepartement, Region region){
+    public Departement(String codeInseeDept, String nomDepartement) {
+        this.codeInseeDept = codeInseeDept;
+        this.nomDepartement = nomDepartement;
+        this.region = new Region();
+    }
 
+    public Departement(String codeInseeDept, String nomDepartement, Region region) {
         this.codeInseeDept = codeInseeDept;
         this.nomDepartement = nomDepartement;
         this.region = region;
-
     }
 
-    public Departement(String codeInseeDept, String nomDepartement,int idRegion){
-        this.codeInseeDept = codeInseeDept;
-        this.nomDepartement = nomDepartement;
-        this.idRegion = idRegion;
-    }
 
 
     public String getCodeInseeDept() {

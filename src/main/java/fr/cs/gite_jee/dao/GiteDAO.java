@@ -77,11 +77,6 @@ public class GiteDAO extends DAO<Gite, GiteSearch> {
             cStmt.setString(5, giteSearch.getIdDepartement());
             cStmt.setInt(6,giteSearch.getNbDepartement());
 
-
-
-
-
-
             cStmt.execute();
             rs = cStmt.getResultSet();
 

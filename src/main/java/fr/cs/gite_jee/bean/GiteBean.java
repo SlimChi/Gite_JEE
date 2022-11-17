@@ -36,9 +36,9 @@ public class GiteBean implements Serializable {
     private ArrayList<Region> listRegionSelected;
 
     private static ArrayList<Departement> allDepartement;
-    private Departement departementSelected;
-    private ArrayList<Departement> listDepartementSelected;
 
+    private ArrayList<Departement> listDepartementSelected;
+    private Departement departementSelected;
     private ArrayList<Gite> allGites;
     private ArrayList<Gite> allGitesSelected;
     private Gite giteSelected;
@@ -120,30 +120,43 @@ public class GiteBean implements Serializable {
     }
 
     public void reset() {
-        init();
+
         giteSearch = new GiteSearch();
 
-        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
         Equipement equipement = new Equipement();
         equipement.setLibelle("Choisir un equipement");
         equipement.setId(0);
 
+
+
+        Departement departement = new Departement();
+        departement.setNomDepartement("Choisir un departement");
+        departement.setCodeInseeDept("");
+
+        Region region = new Region();
+        region.setNom("Choisir une region");
+        region.setId(0);
+
+        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
+        init();
     }
 
     private String departementToString(){
         int nb = listDepartementSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
         if (nb> 1 ){
+            stringBuilder.append("'");
             for (int i=0; i<nb;i++){
                 if (i != (nb -1)) {
-                    stringBuilder.append(listDepartementSelected.get(i).getCodeInseeDept()+",");
+                    stringBuilder.append("''" +listDepartementSelected.get(i).getCodeInseeDept()+"'',''");
                 }else {
-                    stringBuilder.append(listDepartementSelected.get(i).getCodeInseeDept());
+                    stringBuilder.append(listDepartementSelected.get(i).getCodeInseeDept() + "'''");
                 }
             }
         }else {
             stringBuilder.append(listDepartementSelected.get(0).getCodeInseeDept());
         }
+        System.out.println(stringBuilder);
         return stringBuilder.toString();
     }
 
@@ -219,6 +232,37 @@ public class GiteBean implements Serializable {
         PrimeFaces.current().executeScript("PF('manageProductDialog').hide()");
 
     }
+
+    public void onRegionChange() {
+        if (regionSelected.getId() != 0) {
+
+           allDepartement = DaoFactory.getDepartementDAO().getByRegion(regionSelected.getId());
+
+        } else {
+            allDepartement = DaoFactory.getDepartementDAO().getAll();
+            Departement departement = new Departement();
+            allDepartement.add(0, departement);
+        }
+    }
+
+    public void onDepartementChange() {
+        if (departementSelected.getCodeInseeDept() != null) {
+
+            regionSelected = DaoFactory.getRegionDAO().getByID(departementSelected.getRegion().getId());
+            allRegion = new ArrayList<>();
+            allRegion.add(departementSelected.getRegion());
+
+        } else {
+
+            allRegion = DaoFactory.getRegionDAO().getAll();
+            Region region = new Region();
+            allRegion.add(0, region);
+
+
+        }
+    }
+
+
     public ArrayList<Departement> getListDepartementSelected() {
         return listDepartementSelected;
     }

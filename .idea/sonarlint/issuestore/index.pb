@@ -13,8 +13,6 @@ O
 src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392
 a
 1src/main/webapp/faces/templates/templateJSF.xhtml,c\f\cf848ce59845d76b6dedaf34a51f7afea927d43f
-k
-;src/main/java/fr/cs/gite_jee/converter/RegionConverter.java,2\f\2f6531cb6e6b6cf3a5b751d67820589cfaff67a6
 o
 ?src/main/java/fr/cs/gite_jee/converter/EquipementConverter.java,c\2\c29302a077504852f0fceb08a33a106e0c48227c
 s
@@ -25,8 +23,6 @@ j
 :src/main/java/fr/cs/gite_jee/converter/VilleConverter.java,7\1\7155794a02b03eb72003155e210832c828721bf6
 Z
 *src/main/webapp/faces/templates/pied.xhtml,8\7\87fdc975840006fa80f18ef16a6fc5e1edd208a2
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 w
 G.idea/sonarlint/issuestore/8/3/83008b1a88ba03a2548bb5b9ad0768c6c307d36c,d\a\daea70fa78686f653554dff1e2345e281d97e7bd
 w

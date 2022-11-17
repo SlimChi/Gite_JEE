@@ -31,15 +31,16 @@ public class RegionDAO extends DAO <Region, Region>
         ArrayList<Region> liste = new ArrayList<>();
         try (Statement stmt = connexion.createStatement()) {
 
-            String strCmd = "select * from REGION";
+            String strCmd = "SELECT R.id_region,nom_region ,code_insee_dept,nom_departement from REGION as R join DEPARTEMENT on R.id_region=DEPARTEMENT.ID_REGION order by nom_region,NOM_DEPARTEMENT";
             ResultSet rs = stmt.executeQuery(strCmd);
-
+            Region regionLu = new Region(0,"");
             while (rs.next()){
-               Region region = new Region();
-               region.setId(rs.getInt(1));
-               region.setNom(rs.getString(2));
-
-               liste.add(region);
+                if (regionLu.getId() != rs.getInt(1))
+                {
+                    regionLu = new Region(rs.getInt(1), rs.getString(2));
+                    liste.add(regionLu);
+                }
+                regionLu.getDepartement().add(new Departement(rs.getString(3),rs.getString(4)));
             }
             rs.close();
         }

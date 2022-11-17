@@ -1,12 +1,22 @@
 package fr.cs.gite_jee.metier;
 
+import java.util.ArrayList;
+
 public class Region {
 
     private int id;
 
     private String nom;
+    private ArrayList<Departement> departement;
 
     public Region() {
+
+    }
+
+    public Region(int id, String nom) {
+        this.id = id;
+        this.nom = nom;
+        departement = new ArrayList<>();
 
     }
 
@@ -31,5 +41,11 @@ public class Region {
         return nom;
     }
 
+    public ArrayList<Departement> getDepartement() {
+        return departement;
+    }
 
+    public void setDepartement(ArrayList<Departement> departement) {
+        this.departement = departement;
+    }
 }
