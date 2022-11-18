@@ -34,8 +34,6 @@
                         <p:panelGrid columns="5" styleClass="customPanelGrid" layout="grid"
                                      contentStyleClass="ui-fluid">
 
-
-
                             <p:selectCheckboxMenu id="advanced" value="#{giteBean.listEquipementSelected}"
                                                   label="Equipements" style="width: 15rem; border-radius: 15px"
                                                   filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"
@@ -47,25 +45,29 @@
 
                             </p:selectCheckboxMenu>
 
-                            <p:selectCheckboxMenu id="advance" value="#{giteBean.listRegionSelected}"
+                            <p:selectCheckboxMenu id="comboRegion" value="#{giteBean.listRegionSelected}"
                                                   label="Region" style="width: 15rem; border-radius: 15px"
                                                   filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"
                                                   scrollHeight="250"
                                                   dynamic="true">
+
                                 <f:selectItems value="#{giteBean.allRegion}" var="region"
                                                itemLabel="#{region.nom}"
                                                itemValue="#{region}"/>
+                                <f:converter converterId="regionConverter"/>
 
                             </p:selectCheckboxMenu>
 
-                            <p:selectCheckboxMenu id="advanc" value="#{giteBean.listDepartementSelected}"
+                            <p:selectCheckboxMenu id="comboDept" value="#{giteBean.listDepartementSelected}"
                                                   label="Departement" style="width: 15rem; border-radius: 15px"
                                                   filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"
                                                   scrollHeight="250"
                                                   dynamic="true">
+
                                 <f:selectItems value="#{giteBean.allDepartement}" var="departement"
                                                itemLabel="#{departement.nomDepartement}"
                                                itemValue="#{departement}"/>
+                                <f:converter converterId="departementConverter"/>
                             </p:selectCheckboxMenu>
 
                             <p:selectCheckboxMenu id="advan" value="#{giteBean.listVilleSelected}"
