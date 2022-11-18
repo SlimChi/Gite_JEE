@@ -5,8 +5,6 @@ e
 5src/main/java/fr/cs/gite_jee/service/ServiceGite.java,c\6\c69a284212e845039eb68766bcdc1b248a56d59e
 `
 0src/main/java/fr/cs/gite_jee/dao/DaoFactory.java,e\1\e12431ae467e2bb4fa241a46039637ecac4250d7
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 Q
 !src/main/webapp/WEB-INF/beans.xml,8\3\83008b1a88ba03a2548bb5b9ad0768c6c307d36c
 O
@@ -35,3 +33,15 @@ w
 G.idea/sonarlint/issuestore/e/1/e12431ae467e2bb4fa241a46039637ecac4250d7,4\9\498422aadfe190ba5787680ea1f89760551bc056
 d
 4src/main/java/fr/cs/gite_jee/service/ImagesView.java,1\2\12cc6a85c99fa9bb3f7f653fda3668ac74015c81
+Q
+!src/main/webapp/faces/index.xhtml,9\d\9d406a308083c3ecfd41ad80a095df42b2535b1c
+]
+-src/main/webapp/faces/templates/contenu.xhtml,c\3\c3f8e1132597af1a7d33265a585a0e5d74f4c655
+W
+'src/main/webapp/resources/css/style.css,7\9\793286005b9090bf4b63c9281f5cbde07930695e
+k
+;src/main/java/fr/cs/gite_jee/converter/RegionConverter.java,2\f\2f6531cb6e6b6cf3a5b751d67820589cfaff67a6
+d
+4src/main/java/fr/cs/gite_jee/dao/DepartementDAO.java,2\4\24bc58a5b4c71cb9da30bf5f6b0883f7b637ad46
+_
+/src/main/java/fr/cs/gite_jee/dao/RegionDAO.java,6\5\65b95609bff66406a39dceaef93f917e47638f5d

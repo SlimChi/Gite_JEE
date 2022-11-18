@@ -17,8 +17,8 @@ public class GITEConnect {
         if (connexion == null) {
             try {
                 SQLServerDataSource ds = new SQLServerDataSource();
-                ds.setServerName("127.0.0.1");
-                ds.setPortNumber(1401);
+                ds.setServerName("database");
+                ds.setPortNumber(1433);
                 ds.setDatabaseName("PROGICA");
                 ds.setIntegratedSecurity(false);
                 ds.setEncrypt(false);
