@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="progica.war">
+    <root id="archive" name="gite_jee-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="Gite_JEE:war exploded" />
     </root>
   </artifact>

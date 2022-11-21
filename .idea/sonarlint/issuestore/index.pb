@@ -3,8 +3,6 @@ Y
 )src/main/java/fr/cs/gite_jee/dao/DAO.java,9\4\947528e0db20d6dc4905edae7153f172a0cae51f
 e
 5src/main/java/fr/cs/gite_jee/service/ServiceGite.java,c\6\c69a284212e845039eb68766bcdc1b248a56d59e
-`
-0src/main/java/fr/cs/gite_jee/dao/DaoFactory.java,e\1\e12431ae467e2bb4fa241a46039637ecac4250d7
 Q
 !src/main/webapp/WEB-INF/beans.xml,8\3\83008b1a88ba03a2548bb5b9ad0768c6c307d36c
 O
@@ -17,8 +15,6 @@ s
 Csrc/main/java/fr/cs/gite_jee/converter/TypeEquipementConverter.java,0\9\097aab5e1f0cef269ca2219032b65fe9a32fd39f
 c
 3src/main/java/fr/cs/gite_jee/metier/SaisonGite.java,7\f\7fba7c8385b3b3f7651bafd70b1b13522a99c307
-j
-:src/main/java/fr/cs/gite_jee/converter/VilleConverter.java,7\1\7155794a02b03eb72003155e210832c828721bf6
 Z
 *src/main/webapp/faces/templates/pied.xhtml,8\7\87fdc975840006fa80f18ef16a6fc5e1edd208a2
 w
@@ -28,8 +24,6 @@ G.idea/sonarlint/issuestore/e/9/e9f7897e8e887fa9624b87db7fcdb40c370daadd,9\6\96
 w
 G.idea/sonarlint/issuestore/2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392,1\8\188792529ee886cbdc6616248007f7a96c73e03d
 w
-G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\863e0292fd7e9b3e74dafd6cc01f73ba76346482
-w
 G.idea/sonarlint/issuestore/e/1/e12431ae467e2bb4fa241a46039637ecac4250d7,4\9\498422aadfe190ba5787680ea1f89760551bc056
 d
 4src/main/java/fr/cs/gite_jee/service/ImagesView.java,1\2\12cc6a85c99fa9bb3f7f653fda3668ac74015c81
@@ -37,11 +31,13 @@ Q
 !src/main/webapp/faces/index.xhtml,9\d\9d406a308083c3ecfd41ad80a095df42b2535b1c
 ]
 -src/main/webapp/faces/templates/contenu.xhtml,c\3\c3f8e1132597af1a7d33265a585a0e5d74f4c655
-W
-'src/main/webapp/resources/css/style.css,7\9\793286005b9090bf4b63c9281f5cbde07930695e
 k
 ;src/main/java/fr/cs/gite_jee/converter/RegionConverter.java,2\f\2f6531cb6e6b6cf3a5b751d67820589cfaff67a6
-d
-4src/main/java/fr/cs/gite_jee/dao/DepartementDAO.java,2\4\24bc58a5b4c71cb9da30bf5f6b0883f7b637ad46
 _
 /src/main/java/fr/cs/gite_jee/dao/RegionDAO.java,6\5\65b95609bff66406a39dceaef93f917e47638f5d
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+`
+0src/main/java/fr/cs/gite_jee/dao/DaoFactory.java,e\1\e12431ae467e2bb4fa241a46039637ecac4250d7
+f
+6src/main/java/fr/cs/gite_jee/dao/LocaliteVilleDAO.java,a\c\ace0e70f78a40155f1e235ed5e157ec6ea425cfa

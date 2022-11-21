@@ -71,12 +71,10 @@
                                 <p:ajax listener="#{giteBean.departementToString()}"/>
                             </p:selectCheckboxMenu>
 
-                            <div class="field col-12 md:col-4">
-                                <p:outputLabel value="Villes (min 1 caractere)" for="@next"/>
-                                <p:autoComplete id="acMinLength" minQueryLength="1" value="#{giteBean.villeSelected}"
-                                                completeMethod="#{giteBean.villeSearch}" effect="fade" scrollHeight="250" converter="villeConverter"/>
-
-
+                            <div >
+                                <p:outputLabel for="@next"/>
+                                <p:autoComplete id="acMinLength" minQueryLength="1" value="#{giteBean.villeSelected}" placeholder="Villes (min 1 caractere)"
+                                                styleClass="myStyle" completeMethod="#{giteBean.villeSearch}" effect="fade" scrollHeight="250" converter="villeConverter"/>
 
                             </div>
 
@@ -155,7 +153,7 @@
                                             <span
                                                     class="product-category2">#{product.ville.departement.nomDepartement}</span>
                                             <div class="product-price2">
-                                                <h:outputText value="#{product.surfaceHabitable}"
+                                                <h:outputText value="#{product.prixToShow}"
                                                               styleClass="product-price2">
                                                     <f:convertNumber currencySymbol="$" type="currency"/>
                                                 </h:outputText>

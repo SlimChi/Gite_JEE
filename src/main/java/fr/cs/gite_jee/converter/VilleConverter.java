@@ -30,6 +30,6 @@ public class VilleConverter implements Converter {
     @Override
     public String getAsString(FacesContext facesContext, UIComponent uiComponent, Object object) {
         Ville ville = (Ville) object;
-        return (ville.getCodeInsee());
+        return (ville.getNom());
     }
 }

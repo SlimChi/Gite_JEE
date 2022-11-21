@@ -119,8 +119,6 @@ public class GiteBean implements Serializable {
             gs.setVille(villeSelected);
         }
 
-
-
         allGites = DaoFactory.getGiteDAO().getLike(gs);
 
 
@@ -137,8 +135,6 @@ public class GiteBean implements Serializable {
         equipement.setLibelle("Choisir un equipement");
         equipement.setId(0);
 
-
-
         Departement departement = new Departement();
         departement.setNomDepartement("Choisir un departement");
         departement.setCodeInseeDept("");
@@ -146,6 +142,9 @@ public class GiteBean implements Serializable {
         Region region = new Region();
         region.setNom("Choisir une region");
         region.setId(0);
+
+        Ville ville = new Ville();
+        ville.setNom("Ville");
 
         allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
         init();
