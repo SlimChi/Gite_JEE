@@ -145,18 +145,18 @@ public class GiteBean implements Serializable {
         int nb = listDepartementSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
         if (nb> 1 ){
-            stringBuilder.append("'");
+
             for (int i=0; i<nb;i++){
                 if (i != (nb -1)) {
-                    stringBuilder.append("''" +listDepartementSelected.get(i).getCodeInseeDept()+"'',''");
+                    stringBuilder.append("'"+listDepartementSelected.get(i).getCodeInseeDept()+"',");
                 }else {
-                    stringBuilder.append(listDepartementSelected.get(i).getCodeInseeDept() + "'''");
+                    stringBuilder.append("'"+listDepartementSelected.get(i).getCodeInseeDept()+"'");
                 }
             }
         }else {
-            stringBuilder.append(listDepartementSelected.get(0).getCodeInseeDept());
+            stringBuilder.append("'"+listDepartementSelected.get(0).getCodeInseeDept()+"'");
         }
-        System.out.println(stringBuilder);
+      
         return stringBuilder.toString();
     }
 
