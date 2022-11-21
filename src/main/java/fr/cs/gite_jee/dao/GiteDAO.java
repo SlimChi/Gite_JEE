@@ -64,7 +64,7 @@ public class GiteDAO extends DAO<Gite, GiteSearch> {
 
         ResultSet rs;
         ArrayList<Gite> liste = new ArrayList<>();
-        String procedureStockee = "{call SP_GITE_QBE(?,?,?,?,?,?)}";
+        String procedureStockee = "{call SP_GITE_QBE(?,?,?,?,?,?,?)}";
 
         try (CallableStatement cStmt = this.connexion.prepareCall(procedureStockee)) {
 
@@ -75,6 +75,7 @@ public class GiteDAO extends DAO<Gite, GiteSearch> {
             cStmt.setInt(4,giteSearch.getNbRegion());
             cStmt.setString(5, giteSearch.getIdDepartement());
             cStmt.setInt(6,giteSearch.getNbDepartement());
+            cStmt.setString(7,giteSearch.getVille().getCodeInsee());
 
             cStmt.execute();
             rs = cStmt.getResultSet();
@@ -95,6 +96,9 @@ public class GiteDAO extends DAO<Gite, GiteSearch> {
 
                 ville.setDepartement(departement);
                 gite.setVille(ville);
+
+               gite.setPrixToShow(rs.getFloat(6));
+
 
 
                 liste.add(gite);

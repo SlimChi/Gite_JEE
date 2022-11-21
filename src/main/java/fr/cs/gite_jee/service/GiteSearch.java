@@ -74,6 +74,7 @@ public class GiteSearch {
     }
 
     public void setVille(Ville ville) {
+
         this.ville = ville;
     }
 
