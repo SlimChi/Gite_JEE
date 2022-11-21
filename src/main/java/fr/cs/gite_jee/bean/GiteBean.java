@@ -114,6 +114,13 @@ public class GiteBean implements Serializable {
         }
 
 
+        if(villeSelected != null){
+
+            gs.setVille(villeSelected);
+        }
+
+
+
         allGites = DaoFactory.getGiteDAO().getLike(gs);
 
 
@@ -145,7 +152,7 @@ public class GiteBean implements Serializable {
     }
 
     public void departementToString(){
-        System.out.println("deptToString()");
+
         int nb = listDepartementSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
         if (nb> 1 ){
@@ -271,17 +278,10 @@ public class GiteBean implements Serializable {
 
         VilleSearch villeSearch = new VilleSearch();
 
-        
-
         villeSearch.setNom(query);
         villeSearch.setIdDepartement(idDepartements);
 
         allVilles = DaoFactory.getVilleDAO().getLike(villeSearch);
-
-        for(Ville ville:allVilles){
-            System.out.println(ville.getNom());
-        }
-
 
 
         return allVilles;

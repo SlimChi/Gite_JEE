@@ -118,10 +118,12 @@
                                              style="font-weight: bold">#{product.ville.departement.nomDepartement}</div>
                                         <div class="product-description1"
                                              style="font-weight: bold">Couchage :#{product.nombreCouchage}</div>
+                                        <div class="product-description1"
+                                             style="font-weight: bold">Ville :#{product.ville.nom}</div>
                                         <div class="product-description2"
                                              style="font-weight: bold">#{product.adresse}</div>
                                         <div class="product-price">
-                                            <h:outputText value="#{product.adresse}"
+                                            <h:outputText value="#{product.prixToShow}"
                                                           styleClass="product-price">
                                                 <f:convertNumber currencySymbol="$" type="currency"/>
                                             </h:outputText>

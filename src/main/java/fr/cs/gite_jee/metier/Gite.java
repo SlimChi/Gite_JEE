@@ -49,6 +49,8 @@ public class Gite {
 
     private ArrayList<LocaliteSaisonPeriode> localiteSaisonPeriodes;
 
+    private Float prixToShow;
+
 
     public Gite() {
 
@@ -236,5 +238,11 @@ public class Gite {
         this.localiteSaisonPeriodes = localiteSaisonPeriodes;
     }
 
+    public Float getPrixToShow() {
+        return prixToShow;
+    }
 
+    public void setPrixToShow(Float prixToShow) {
+        this.prixToShow = prixToShow;
+    }
 }
