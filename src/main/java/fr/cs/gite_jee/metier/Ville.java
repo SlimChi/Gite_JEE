@@ -96,5 +96,8 @@ public class Ville {
         this.departement = departement;
     }
 
-
+    @Override
+    public String toString() {
+        return nom;
+    }
 }

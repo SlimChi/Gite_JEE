@@ -4,6 +4,7 @@ import fr.cs.gite_jee.dao.DaoFactory;
 import fr.cs.gite_jee.metier.*;
 import fr.cs.gite_jee.service.GiteSearch;
 import fr.cs.gite_jee.service.ServiceGite;
+import fr.cs.gite_jee.service.VilleSearch;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.application.FacesMessage;
@@ -48,6 +49,8 @@ public class GiteBean implements Serializable {
     private ServiceGite serviceGite;
 
     private GiteSearch giteSearch;
+
+    private String idDepartements;
 
     @PostConstruct
     private void init() {
@@ -107,7 +110,7 @@ public class GiteBean implements Serializable {
 
         if (listDepartementSelected.size() != 0){
             gs.setNbDepartement(listDepartementSelected.size());
-            gs.setIdDepartement(departementToString());
+            gs.setIdDepartement(idDepartements);
         }
 
 
@@ -141,7 +144,8 @@ public class GiteBean implements Serializable {
         init();
     }
 
-    private String departementToString(){
+    public void departementToString(){
+        System.out.println("deptToString()");
         int nb = listDepartementSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
         if (nb> 1 ){
@@ -156,8 +160,8 @@ public class GiteBean implements Serializable {
         }else {
             stringBuilder.append("'"+listDepartementSelected.get(0).getCodeInseeDept()+"'");
         }
-      
-        return stringBuilder.toString();
+
+        this.idDepartements = stringBuilder.toString();
     }
 
     private String regionToString(){
@@ -260,6 +264,28 @@ public class GiteBean implements Serializable {
 
 
         }
+    }
+
+
+    public ArrayList<Ville> villeSearch(String query){
+
+        VilleSearch villeSearch = new VilleSearch();
+
+        
+
+        villeSearch.setNom(query);
+        villeSearch.setIdDepartement(idDepartements);
+
+        allVilles = DaoFactory.getVilleDAO().getLike(villeSearch);
+
+        for(Ville ville:allVilles){
+            System.out.println(ville.getNom());
+        }
+
+
+
+        return allVilles;
+
     }
 
 

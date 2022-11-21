@@ -1,16 +1,15 @@
 package fr.cs.gite_jee.dao;
 
 import fr.cs.gite_jee.metier.Departement;
+import fr.cs.gite_jee.metier.Gite;
 import fr.cs.gite_jee.metier.Region;
 import fr.cs.gite_jee.metier.Ville;
+import fr.cs.gite_jee.service.VilleSearch;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
-public class VilleDAO extends DAO<Ville, Ville> {
+public class VilleDAO extends DAO<Ville, VilleSearch> {
     public VilleDAO(Connection connexion) {
         super(connexion);
     }
@@ -47,9 +46,42 @@ public class VilleDAO extends DAO<Ville, Ville> {
     }
 
     @Override
-    public ArrayList<Ville> getLike(Ville objet) {
-        return null;
+    public ArrayList<Ville> getLike(VilleSearch objet) {
+
+        ResultSet rs;
+        ArrayList<Ville> liste = new ArrayList<>();
+        String procedureStockee = "{call SP_VILLE_QBE(?,?)}";
+
+        try (CallableStatement cStmt = this.connexion.prepareCall(procedureStockee)) {
+
+            cStmt.setString(1,objet.getNom());
+            cStmt.setString(2,objet.getIdDepartement());
+
+
+            cStmt.execute();
+            rs = cStmt.getResultSet();
+
+            while (rs.next()) {
+
+                Ville ville = new Ville();
+                ville.setCodeInseeDept(rs.getString(1));
+                ville.setCodeInsee(rs.getString(2));
+                ville.setNom(rs.getString(3));
+                ville.setLatitude(rs.getFloat(4));
+                ville.setLongitude(rs.getFloat(5));
+
+                liste.add(ville);
+
+            }
+            rs.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return liste;
     }
+
+
 
     @Override
     public boolean insert(Ville objet) {

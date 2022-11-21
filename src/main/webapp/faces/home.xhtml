@@ -68,17 +68,27 @@
                                                itemLabel="#{departement.nomDepartement}"
                                                itemValue="#{departement}"/>
                                 <f:converter converterId="departementConverter"/>
+                                <p:ajax listener="#{giteBean.departementToString()}"/>
                             </p:selectCheckboxMenu>
 
-                            <p:selectCheckboxMenu id="advan" value="#{giteBean.listVilleSelected}"
-                                                  label="Ville" style="width: 15rem; border-radius: 15px"
-                                                  filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"
-                                                  scrollHeight="250"
-                                                  dynamic="true">
-                                <f:selectItems value="#{giteBean.allVilles}" var="ville"
-                                               itemLabel="#{ville.nom}"
-                                               itemValue="#{ville}"/>
-                            </p:selectCheckboxMenu>
+                            <div class="field col-12 md:col-4">
+                                <p:outputLabel value="Villes (min 1 caractere)" for="@next"/>
+                                <p:autoComplete id="acMinLength" minQueryLength="1" value="#{giteBean.villeSelected}"
+                                                completeMethod="#{giteBean.villeSearch}" effect="fade" scrollHeight="250" converter="villeConverter"/>
+
+
+
+                            </div>
+
+<!--                            <p:selectCheckboxMenu id="advan" value="#{giteBean.listVilleSelected}"-->
+<!--                                                  label="Ville" style="width: 15rem; border-radius: 15px"-->
+<!--                                                  filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"-->
+<!--                                                  scrollHeight="250"-->
+<!--                                                  dynamic="true">-->
+<!--                                <f:selectItems value="#{giteBean.allVilles}" var="ville"-->
+<!--                                               itemLabel="#{ville.nom}"-->
+<!--                                               itemValue="#{ville}"/>-->
+<!--                            </p:selectCheckboxMenu>-->
 
                             <p:commandButton value="filtrer" update=":form:dataViewGites" actionListener="#{giteBean.filtrer}"/>
                             <p:commandButton value="reset" update=":form:dataViewGites" actionListener="#{giteBean.reset}"/>
@@ -86,7 +96,7 @@
 
                         </p:panelGrid>
 
-                        <p:dataView id="dataViewGites" var="product" value="#{giteBean.allGites}" rows="5" paginator="true"
+                        <p:dataView id="dataViewGites" var="product" value="#{giteBean.allGites}" rows="6" paginator="true"
                                     paginatorPosition="bottom"
                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                                     gridIcon="pi pi-th-large" listIcon="pi pi-bars"
