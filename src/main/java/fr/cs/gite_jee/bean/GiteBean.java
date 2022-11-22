@@ -260,9 +260,6 @@ public class GiteBean implements Serializable {
         }
     }
 
-    public void test(){
-        System.out.println("test");
-    }
 
     public ArrayList<Ville> villeSearch(String query){
 
@@ -381,7 +378,6 @@ public class GiteBean implements Serializable {
     }
 
     public void setGiteSelected(Gite giteSelected) {
-        System.out.println("setGiteSelected");
         this.giteSelected = giteSelected;
     }
 
