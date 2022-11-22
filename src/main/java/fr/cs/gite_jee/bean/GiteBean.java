@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class GiteBean implements Serializable {
 
 
-
     private static ArrayList<Equipement> allEquipements;
     private Equipement equipementSelected;
     private ArrayList<Equipement> listEquipementSelected;
@@ -56,65 +55,41 @@ public class GiteBean implements Serializable {
     private void init() {
 
 
-        Equipement equipement = new Equipement();
-        equipement.setLibelle("Choisir un equipement");
-        equipement.setId(0);
-
         allEquipements = DaoFactory.getEquipementDAO().getAll();
-        allEquipements.add(0,equipement);
-
-        Region region = new Region();
-        region.setNom("Choisir une region");
-        region.setId(0);
-
-
         allRegion = DaoFactory.getRegionDAO().getAll();
-        allRegion.add(0, region);
-
-        Departement departement = new Departement();
-        departement.setNomDepartement("Choisir un departement");
-        departement.setCodeInseeDept("");
-
         allDepartement = DaoFactory.getDepartementDAO().getAll();
-        allDepartement.add(0,departement);
-
-        Ville ville = new Ville();
-        ville.setNom("Choisir une ville");
-
-
         allVilles = DaoFactory.getVilleDAO().getAll();
-        allVilles.add(0,ville);
 
 
         GiteSearch giteSearch = new GiteSearch();
 
 
-        allGites= DaoFactory.getGiteDAO().getLike(giteSearch);
+        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
 
     }
 
-    public void filtrer(){
+    public void filtrer() {
 
-        GiteSearch gs= new GiteSearch();
+        GiteSearch gs = new GiteSearch();
 
-        if(listEquipementSelected.size() != 0){
+        if (listEquipementSelected.size() != 0) {
             gs.setNbEquipements(listEquipementSelected.size());
             gs.setIdEquipements(equipementToString());
         }
 
-        if (listRegionSelected.size() != 0){
+        if (listRegionSelected.size() != 0) {
             gs.setNbRegion(listRegionSelected.size());
             gs.setIdRegion(regionToString());
 
         }
 
-        if (listDepartementSelected.size() != 0){
+        if (listDepartementSelected.size() != 0) {
             gs.setNbDepartement(listDepartementSelected.size());
             gs.setIdDepartement(idDepartements);
         }
 
 
-        if(villeSelected != null){
+        if (villeSelected != null) {
 
             gs.setVille(villeSelected);
         }
@@ -124,79 +99,62 @@ public class GiteBean implements Serializable {
 
         listEquipementSelected = null;
         listRegionSelected = null;
-        listDepartementSelected =null;
+        listDepartementSelected = null;
     }
 
     public void reset() {
 
         giteSearch = new GiteSearch();
-
-        Equipement equipement = new Equipement();
-        equipement.setLibelle("Choisir un equipement");
-        equipement.setId(0);
-
-        Departement departement = new Departement();
-        departement.setNomDepartement("Choisir un departement");
-        departement.setCodeInseeDept("");
-
-        Region region = new Region();
-        region.setNom("Choisir une region");
-        region.setId(0);
-
-        Ville ville = new Ville();
-        ville.setNom("Ville");
-
-        allDepartement.clear();
-
         allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
         init();
     }
 
-    public void departementToString(){
+    public void departementToString() {
 
         int nb = listDepartementSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
 
-            for (int i=0; i<nb;i++){
-                if (i != (nb -1)) {
-                    stringBuilder.append("'"+listDepartementSelected.get(i).getCodeInseeDept()+"',");
-                }else {
-                    stringBuilder.append("'"+listDepartementSelected.get(i).getCodeInseeDept()+"'");
-                }
+        for (int i = 0; i < nb; i++) {
+            if (i != (nb - 1)) {
+                stringBuilder.append("'" + listDepartementSelected.get(i).getCodeInseeDept() + "',");
+            } else {
+                stringBuilder.append("'" + listDepartementSelected.get(i).getCodeInseeDept() + "'");
             }
+        }
 
         this.idDepartements = stringBuilder.toString();
     }
 
-    private String regionToString(){
+    private String regionToString() {
         int nb = listRegionSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
-            for (int i=0; i<nb;i++){
-                if (i != (nb - 1)) {
-                    stringBuilder.append(listRegionSelected.get(i).getId()+",");
-                }else{
-                    stringBuilder.append(listRegionSelected.get(i).getId());
-                }
+        for (int i = 0; i < nb; i++) {
+            if (i != (nb - 1)) {
+                stringBuilder.append(listRegionSelected.get(i).getId() + ",");
+            } else {
+                stringBuilder.append(listRegionSelected.get(i).getId());
             }
+        }
         return stringBuilder.toString();
     }
 
-    private String equipementToString(){
+    private String equipementToString() {
 
         int nb = listEquipementSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
 
-            for(int i=0;i<nb;i++){
-                if(i != (nb-1)){
-                    stringBuilder.append(listEquipementSelected.get(i).getId()+",");
-                }else{
-                    stringBuilder.append(listEquipementSelected.get(i).getId());
-                }
+        for (int i = 0; i < nb; i++) {
+            if (i != (nb - 1)) {
+                stringBuilder.append(listEquipementSelected.get(i).getId() + ",");
+            } else {
+                stringBuilder.append(listEquipementSelected.get(i).getId());
             }
+        }
 
 
         return stringBuilder.toString();
     }
+
     public void NouveauGite() {
         giteSelected = new Gite();
 
@@ -214,15 +172,14 @@ public class GiteBean implements Serializable {
 
     public void saveGite() {
         if (giteSelected.getId() == 0) {
-            try{
+            try {
                 DaoFactory.getGiteDAO().insert(giteSelected);
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Gite ajouté"));
-            } catch (Exception e){
+            } catch (Exception e) {
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Erreur! gite non ajouté"));
             }
 
-        }
-        else {
+        } else {
             DaoFactory.getGiteDAO().update(giteSelected);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Article mis à jour"));
         }
@@ -234,7 +191,7 @@ public class GiteBean implements Serializable {
     public void onRegionChange() {
         if (regionSelected.getId() != 0) {
 
-           allDepartement = DaoFactory.getDepartementDAO().getByRegion(regionSelected.getId());
+            allDepartement = DaoFactory.getDepartementDAO().getByRegion(regionSelected.getId());
 
         } else {
             allDepartement = DaoFactory.getDepartementDAO().getAll();
@@ -261,7 +218,7 @@ public class GiteBean implements Serializable {
     }
 
 
-    public ArrayList<Ville> villeSearch(String query){
+    public ArrayList<Ville> villeSearch(String query) {
 
         VilleSearch villeSearch = new VilleSearch();
 
