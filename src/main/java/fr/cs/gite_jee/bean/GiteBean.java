@@ -146,6 +146,8 @@ public class GiteBean implements Serializable {
         Ville ville = new Ville();
         ville.setNom("Ville");
 
+        allDepartement.clear();
+
         allGites = DaoFactory.getGiteDAO().getLike(giteSearch);
         init();
     }
@@ -154,7 +156,6 @@ public class GiteBean implements Serializable {
 
         int nb = listDepartementSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
-        if (nb> 1 ){
 
             for (int i=0; i<nb;i++){
                 if (i != (nb -1)) {
@@ -163,9 +164,6 @@ public class GiteBean implements Serializable {
                     stringBuilder.append("'"+listDepartementSelected.get(i).getCodeInseeDept()+"'");
                 }
             }
-        }else {
-            stringBuilder.append("'"+listDepartementSelected.get(0).getCodeInseeDept()+"'");
-        }
 
         this.idDepartements = stringBuilder.toString();
     }
@@ -173,7 +171,6 @@ public class GiteBean implements Serializable {
     private String regionToString(){
         int nb = listRegionSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
-        if (nb> 1){
             for (int i=0; i<nb;i++){
                 if (i != (nb - 1)) {
                     stringBuilder.append(listRegionSelected.get(i).getId()+",");
@@ -181,9 +178,6 @@ public class GiteBean implements Serializable {
                     stringBuilder.append(listRegionSelected.get(i).getId());
                 }
             }
-        }else {
-            stringBuilder.append(listRegionSelected.get(0).getId());
-        }
         return stringBuilder.toString();
     }
 
@@ -192,8 +186,6 @@ public class GiteBean implements Serializable {
         int nb = listEquipementSelected.size();
         StringBuilder stringBuilder = new StringBuilder("");
 
-        if( nb> 1){
-
             for(int i=0;i<nb;i++){
                 if(i != (nb-1)){
                     stringBuilder.append(listEquipementSelected.get(i).getId()+",");
@@ -201,10 +193,6 @@ public class GiteBean implements Serializable {
                     stringBuilder.append(listEquipementSelected.get(i).getId());
                 }
             }
-
-        }else{
-            stringBuilder.append(listEquipementSelected.get(0).getId());
-        }
 
 
         return stringBuilder.toString();
@@ -272,6 +260,9 @@ public class GiteBean implements Serializable {
         }
     }
 
+    public void test(){
+        System.out.println("test");
+    }
 
     public ArrayList<Ville> villeSearch(String query){
 
@@ -390,6 +381,7 @@ public class GiteBean implements Serializable {
     }
 
     public void setGiteSelected(Gite giteSelected) {
+        System.out.println("setGiteSelected");
         this.giteSelected = giteSelected;
     }
 

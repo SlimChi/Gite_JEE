@@ -129,9 +129,9 @@
                                                              value="Détails" update=":dialogs:manage-product-content"
                                                              oncomplete="PF('manageProductDialog').show()"
                                                              styleClass="edit-button rounded-button ui-button-success"
-                                                             process="@this">
+                                                             process="@this" action="#{giteBean.test}">
                                                 <f:setPropertyActionListener value="#{product}"
-                                                                             target="#{giteBean.giteSelected}"/>
+                                                                             target="#{giteBean.giteSelected}" />
                                                 <p:resetInput target=":dialogs:manage-product-content"/>
                                             </p:commandButton>
                                         </div>
