@@ -1,9 +1,6 @@
 package fr.cs.gite_jee.metier;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+
 
 import java.util.ArrayList;
 
@@ -64,10 +61,7 @@ public class Gite {
         return id;
     }
 
-    public IntegerProperty getIdProperty(){
 
-        return new SimpleIntegerProperty(id);
-    }
 
     public void setId(int id) {
         this.id = id;
@@ -77,9 +71,7 @@ public class Gite {
         return nom;
     }
 
-    public StringProperty getNomProperty(){
-        return new SimpleStringProperty(nom);
-    }
+
 
     public void setNom(String nom) {
         this.nom = nom;
@@ -88,17 +80,13 @@ public class Gite {
     public int getNombreChambre() {
         return nombreChambre;
     }
-    public IntegerProperty getNombreChambreProperty() {
-        return new SimpleIntegerProperty(nombreCouchage);
-    }
+
 
     public void setNombreChambre(int nombreChambre) {
         this.nombreChambre = nombreChambre;
     }
 
-    public IntegerProperty getNombreCouchargeProperty(){
-        return new SimpleIntegerProperty(nombreCouchage);
-    }
+
 
     public int getNombreCouchage() {
         return nombreCouchage;
@@ -119,9 +107,7 @@ public class Gite {
     public String getAdresse() {
         return adresse;
     }
-    public StringProperty getAdresseroperty(){
-        return new SimpleStringProperty(adresse);
-    }
+
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }

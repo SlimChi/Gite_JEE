@@ -1,7 +1,6 @@
 package fr.cs.gite_jee.metier;
 
-import javafx.beans.property.FloatProperty;
-import javafx.beans.property.SimpleFloatProperty;
+
 
 public class EquipementGite {
 
@@ -46,9 +45,7 @@ public class EquipementGite {
         return prix;
     }
 
-    public FloatProperty getPrixProperty(){
-        return new SimpleFloatProperty(prix);
-    }
+
 
     public void setPrix(float prix) {
         this.prix = prix;

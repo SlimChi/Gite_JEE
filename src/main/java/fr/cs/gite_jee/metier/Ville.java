@@ -1,7 +1,5 @@
 package fr.cs.gite_jee.metier;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 
 import java.util.Objects;
 
@@ -48,9 +46,7 @@ public class Ville {
         return nom;
     }
 
-    public StringProperty getNomProperty(){
-        return new SimpleStringProperty(nom);
-    }
+
 
     public void setNom(String nom) {
         this.nom = nom;

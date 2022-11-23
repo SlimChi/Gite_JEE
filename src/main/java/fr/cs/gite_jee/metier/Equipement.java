@@ -1,7 +1,6 @@
 package fr.cs.gite_jee.metier;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+
 
 import java.util.Objects;
 
@@ -46,8 +45,6 @@ public class Equipement {
         return libelle;
     }
 
-    public StringProperty getLibelleProperty(){return new SimpleStringProperty(libelle);
-    }
 
     public void setLibelle(String libelle) {
         this.libelle = libelle;

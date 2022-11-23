@@ -1,7 +1,0 @@
-
-†
-java:S13194"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¡Ñ¦´
-‘
-java:S13198"vThe type of "localiteSaisonPeriodes" should be an interface such as "List" rather than the implementation "ArrayList".(ÄÖÙ†øÿÿÿÿ
-œ
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(î§æÀþÿÿÿÿ

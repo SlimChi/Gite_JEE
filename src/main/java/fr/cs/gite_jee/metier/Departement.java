@@ -1,7 +1,6 @@
 package fr.cs.gite_jee.metier;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+
 
 import java.util.Objects;
 
@@ -68,9 +67,6 @@ public class Departement {
     }
 
 
-    public StringProperty getNomDepartementProperty(){
-        return new SimpleStringProperty(nomDepartement);
-    }
 
     @Override
     public boolean equals(Object o) {
