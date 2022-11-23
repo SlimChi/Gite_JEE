@@ -1,17 +1,17 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Gite_JEE:war exploded">
+  <artifact type="exploded-war" name="gite_jee:war exploded">
     <output-path>$PROJECT_DIR$/target/gite_jee-1.0-SNAPSHOT</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>Gite_JEE</module>
+        <module>gite_jee</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Gite_JEE" />
+          <element id="module-output" name="gite_jee" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.glassfish:jakarta.faces:4.0.0" />
@@ -26,12 +26,20 @@
           <element id="library" level="project" name="Maven: org.webjars.npm:primeflex:3.2.0" />
           <element id="library" level="project" name="Maven: org.openjfx:javafx-base:17.0.1" />
           <element id="library" level="project" name="Maven: org.openjfx:javafx-base:win:17.0.1" />
+          <element id="library" level="project" name="Maven: jakarta.security.enterprise:jakarta.security.enterprise-api:3.0.0" />
+          <element id="library" level="project" name="Maven: jakarta.json:jakarta.json-api:2.1.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.soteria:jakarta.security.enterprise:3.0.0" />
+          <element id="library" level="project" name="Maven: com.nimbusds:nimbus-jose-jwt:9.23" />
+          <element id="library" level="project" name="Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1" />
+          <element id="library" level="project" name="Maven: jakarta.ws.rs:jakarta.ws.rs-api:3.1.0" />
+          <element id="library" level="project" name="Maven: jakarta.mail:jakarta.mail-api:2.1.0" />
+          <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:2.1.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/gite_jee-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Gite_JEE/web/Web" />
+      <element id="javaee-facet-resources" facet="gite_jee/web/Web" />
     </root>
   </artifact>
 </component>

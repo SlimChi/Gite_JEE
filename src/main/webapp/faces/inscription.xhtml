@@ -23,7 +23,7 @@
                             </p:inputText>
                             <p:message for="Nom" display="icon"/>
 
-                            <p:outputLabel for="Prenom" value="PrÃ©nom:"/>
+                            <p:outputLabel for="Prenom" value="Prenom:"/>
                             <p:inputText id="Prenom" value="#{remoteValidationView.lastname}" label="Prenom" required="true">
                                 <f:validateLength minimum="2"/>
                                 <p:ajax update="msgLastname" event="keyup"/>
