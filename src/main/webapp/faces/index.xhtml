@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <h:body>
+        <ui:composition template="templates/templateJSF.xhtml"
+                        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                        xmlns:h="http://xmlns.jcp.org/jsf/html">
+            <ui:define name="contenu">
+                <div class="card1 crud-demo">
+
+                    <h:form id="form" style="width: 85%; background-color: beige">
+                        <p:growl id="messages" showDetail="true"/>
+
+
+                        <p:dataTable id="gites" widgetVar="dtGites" var="gite" value="#{giteBean.allGites}"
+                                     showGridlines="true" stripedRows="true"
+                                     reflow="true" styleClass="products-table"
+                                     selection="#{giteBean.allGitesSelected}" stickyHeader="true"
+                                     stickyTopAt=".layout-topbar"
+                                     rowKey="#{giteBean.giteSelected.id}" paginator="true" rows="25"
+                                     rowSelectMode="add" paginatorPosition="bottom">
+                            <f:facet name="header">
+                                <div class="products-table-header">
+                                    <span style="font-weight: bold">Rechercher</span>
+                                    <span class="filter-container ui-input-icon-left" style="margin-right: 10px"> <i
+                                            class="pi pi-search"></i>
+                             <p:inputText id="globalFilter" onkeyup="PF('dtGites').filter()" placeholder="Search"/>
+                            </span>
+
+                                    <div style="float: right">
+                                        <p:splitButton value="Filtrer" action="#{giteBean.filtrer}" update="gites"
+                                                       icon="pi pi-check-circle">
+                                            <p:menuitem value="Reset" action="#{giteBean.reset}" update="gites"
+                                                        icon="pi pi-refresh"/>
+                                        </p:splitButton>
+                                    </div>
+                                </div>
+
+                                <div style="margin-top: 15px">
+                                    <p:commandButton value="Ajouter" class="ui-button-yellow rounded-button"
+                                                     icon="pi pi-plus-circle"
+                                                     actionListener="#{giteBean.NouveauGite}"
+                                                     update=":dialogs:manage-product-content"
+                                                     oncomplete="PF('manageProductDialog').show()"
+                                                     styleClass="ui-button rounded-button" style="margin-right: .5rem">
+                                        <p:resetInput target=":dialogs:manage-product-content"/>
+                                    </p:commandButton>
+                                </div>
+
+
+                            </f:facet>
+                            <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
+
+                            <p:column headerText="Article Id" sortBy="#{gite.id}" filterBy="#{gite.id}">
+                                <h:outputText value="#{gite.id}"/>
+                            </p:column>
+                            <p:column headerText="Nom" sortBy="#{gite.nom}" filterBy="#{gite.nom}">
+
+                                    <img alt="no image" src="image1.jpg" style="width:220px"/>
+
+                                <h:outputText value="#{gite.nom}"/>
+                            </p:column>
+                            <p:column headerText="Ville" sortBy="#{gite.ville.nom}" filterBy="#{gite.ville.nom}">
+                                <h:outputText value="#{gite.ville.nom}"/>
+                            </p:column>
+                            <p:column headerText="Département" sortBy="#{gite.ville.departement.nomDepartement}"
+                                      filterBy="#{gite.ville.departement.nomDepartement}">
+                                <h:outputText value="#{gite.ville.departement.nomDepartement}"/>
+                            </p:column>
+                            <p:column headerText="Nombre de couchage" sortBy="#{gite.nombreCouchage}"
+                                      filterBy="#{gite.nombreCouchage}">
+                                <h:outputText value="#{gite.nombreCouchage}"/>
+                            </p:column>
+
+                            <p:column>
+                                <div style="float: right">
+                                    <p:commandButton icon="pi pi-pencil" update=":dialogs:manage-product-content"
+                                                     oncomplete="PF('manageProductDialog').show()"
+                                                     styleClass="edit-button rounded-button ui-button-success"
+                                                     process="@this">
+                                        <f:setPropertyActionListener value="#{gite}"
+                                                                     target="#{giteBean.giteSelected}"/>
+                                        <p:resetInput target=":dialogs:manage-product-content"/>
+                                    </p:commandButton></div>
+
+                                <p:commandButton class="ui-button-danger rounded-button" icon="pi pi-trash"
+                                                 style="margin-left: 15px" process="@this"
+                                                 oncomplete="PF('deleteProductDialog').show()">
+                                    <f:setPropertyActionListener value="#{gite}"
+                                                                 target="#{giteBean.giteSelected}"/>
+
+                                </p:commandButton>
+                            </p:column>
+
+                        </p:dataTable>
+
+
+                    </h:form>
+                    <h:form id="dialogs">
+                        <p:dialog header="Détails de l'article" showEffect="fade" modal="true"
+                                  widgetVar="manageProductDialog"
+                                  responsive="true">
+                            <p:outputPanel id="manage-product-content" class="ui-fluid">
+                                <p:outputPanel rendered="#{not empty giteBean.giteSelected}">
+
+                                    <div class="field">
+                                        <p:outputLabel for="name">Gite</p:outputLabel>
+                                        <p:inputText id="name" value="#{giteBean.giteSelected.nom}"
+                                                     required="true"/>
+                                    </div>
+                                    <div class="field">
+                                        <p:outputLabel for="nbrCouchage">Nombre de couchage</p:outputLabel>
+                                        <p:inputText id="nbrCouchage" value="#{giteBean.giteSelected.nombreCouchage}"
+                                                     required="true"/>
+                                    </div>
+
+                                    <div class="field col">
+                                        <p:outputLabel for="ville">Ville</p:outputLabel>
+                                        <p:inputNumber id="ville" value="#{giteBean.villeSelected.departement.nomDepartement}"
+                                        />
+                                    </div>
+
+
+                                </p:outputPanel>
+                            </p:outputPanel>
+
+                            <f:facet name="footer">
+                                <p:commandButton value="Save" icon="pi pi-check"
+                                                 actionListener="#{giteBean.saveGite}"
+                                                 update="manage-product-content"
+                                                 process="manage-product-content @this"/>
+                                <p:commandButton value="Cancel" icon="pi pi-times"
+                                                 onclick="PF('manageProductDialog').hide()"
+                                                 class="ui-button-secondary" type="button"/>
+                            </f:facet>
+                        </p:dialog>
+
+                        <p:confirmDialog widgetVar="deleteProductDialog" showEffect="fade" width="500"
+                                         message="Voulez vous supprimer le gite ?" header="Confirm" severity="warn">
+                            <p:commandButton value="Yes" icon="pi pi-check" actionListener="#{giteBean.deleteGite}"
+                                             process="@this"
+                                             oncomplete="PF('deleteProductDialog').hide()"/>
+                            <p:commandButton value="No" type="button" styleClass="ui-button-secondary"
+                                             icon="pi pi-times"
+                                             onclick="PF('deleteProductDialog').hide()"/>
+                        </p:confirmDialog>
+
+
+                    </h:form>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</f:view>
+</html>

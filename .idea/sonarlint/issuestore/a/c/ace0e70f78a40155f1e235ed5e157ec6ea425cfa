@@ -1,0 +1,11 @@
+
+J
+java:S3740/"/Provide the parametrized type for this generic.(¥ÄØ†ÿÿÿÿÿ
+‹
+java:S1319/"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¥ÄØ†ÿÿÿÿÿ
+j
+java:S20955"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Õò‡ÿÿÿÿÿ
+A
+java:S1168"+Return an empty collection instead of null.(¥¹ï
+A
+java:S1168"+Return an empty collection instead of null.(¥¹ï

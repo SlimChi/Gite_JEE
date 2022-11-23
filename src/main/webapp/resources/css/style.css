@@ -1,0 +1,164 @@
+.product-grid-item-bottom {
+    margin-right: 0;
+}
+
+
+@media screen and (max-width: 991px) {
+    .content {
+        flex-direction: column;
+        width: 98%;
+    }
+}
+
+.content {
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);
+}
+
+.card {
+    margin: 1%;
+    padding: 50px;
+    border-radius: 8px;
+    position: center;
+    transition: 0.3s all;
+    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);
+    width: 70%;
+}
+
+.card2 {
+    margin-left: 20%;
+    width: 70%;
+    padding: 30px;
+    border-radius: 8px;
+    position: center;
+    transition: 0.3s all;
+    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);
+}
+
+.card2:hover {
+    transform: scale(1.05);
+}
+
+.card-menu {
+    margin: 1%;
+    padding: 30px;
+    border-radius: 8px;
+    position: center;
+    transition: 0.3s all;
+    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);
+}
+
+.card-menu:hover {
+    transform: scale(1.05);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 1240px) {
+    .card {
+        width: 90%;
+    }
+}
+.card4 {
+
+    padding: 30px;
+    border-radius: 8px;
+    margin-left: 10%;
+    transition: 0.3s all;
+    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);
+    width: 75%;
+}
+
+.card4:hover {
+    transform: scale(1.05);
+}
+
+img {
+    width: 300px ;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 150px;
+
+}
+@media (max-width:1622px){
+    img {
+    width: 98%;
+
+    }
+}
+@media (max-width:991px){
+    img {
+        width: 95%;
+    }
+}
+
+.pad-top {
+    padding-top: 20px;
+}
+
+.product-list-detail {
+    display: inline-flex;
+
+}
+
+.detail-right {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.product-price2 {
+    margin-top: 80px;
+    font-weight: bold;
+    font-size: 25px;
+    color: cornflowerblue;
+}
+
+.product-price {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 25px;
+    color: cornflowerblue;
+}
+
+.product-name2 {
+    font-weight: bold;
+    color: darkred;
+
+}
+
+.product-category {
+    font-weight: bold;
+    color: darkred;
+
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}

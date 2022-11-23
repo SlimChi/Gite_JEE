@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  database:
+    container_name: gitedatabase
+    image: slimanedz/progica_db
+
+  app:
+    container_name: giteweb
+    image: slimanedz/gitewebapp
+    ports:
+      - "8080:8080"
