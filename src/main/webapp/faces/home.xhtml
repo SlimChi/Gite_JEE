@@ -25,10 +25,10 @@
                     </p:contentFlow>
                 </div>
                 <div class="content">
-<!--                    <script src="https://maps.google.com/maps/api/js?sensor=false" type=""></script>-->
-<!--                    -->
-<!--                        <p:gmap  center="36.890257,30.707417" zoom="13" type="HYBRID" style="width:50%;height:800px"-->
-<!--                                model="#{markersView.simpleModel}"/>-->
+                    <!--                    <script src="https://maps.google.com/maps/api/js?sensor=false" type=""></script>-->
+                    <!--                    -->
+                    <!--                        <p:gmap  center="36.890257,30.707417" zoom="13" type="HYBRID" style="width:50%;height:800px"-->
+                    <!--                                model="#{markersView.simpleModel}"/>-->
 
                     <h:form id="form">
                         <p:panelGrid columns="5" styleClass="customPanelGrid" layout="grid"
@@ -36,7 +36,8 @@
 
                             <p:selectCheckboxMenu id="advanced" value="#{giteBean.listEquipementSelected}"
                                                   label="Equipements" style="width: 15rem; border-radius: 15px"
-                                                  filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"
+                                                  filterMatchMode="startsWith" panelStyle="width: 15rem"
+                                                  styleClass="comboBox"
                                                   scrollHeight="250"
                                                   dynamic="true">
                                 <f:selectItems value="#{giteBean.allEquipements}" var="equipement"
@@ -47,7 +48,8 @@
 
                             <p:selectCheckboxMenu id="comboRegion" value="#{giteBean.listRegionSelected}"
                                                   label="Region" style="width: 15rem; border-radius: 15px"
-                                                  filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"
+                                                  filterMatchMode="startsWith" panelStyle="width: 15rem"
+                                                  styleClass="comboBox"
                                                   scrollHeight="250"
                                                   dynamic="true">
 
@@ -60,7 +62,8 @@
 
                             <p:selectCheckboxMenu id="comboDept" value="#{giteBean.listDepartementSelected}"
                                                   label="Departement" style="width: 15rem; border-radius: 15px"
-                                                  filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"
+                                                  filterMatchMode="startsWith" panelStyle="width: 15rem"
+                                                  styleClass="comboBox"
                                                   scrollHeight="250"
                                                   dynamic="true">
 
@@ -71,30 +74,35 @@
                                 <p:ajax listener="#{giteBean.departementToString()}"/>
                             </p:selectCheckboxMenu>
 
-                            <div >
+                            <div>
                                 <p:outputLabel for="@next"/>
-                                <p:autoComplete id="acMinLength" minQueryLength="1" value="#{giteBean.villeSelected}" placeholder="Villes (min 1 caractere)"
-                                                styleClass="myStyle" completeMethod="#{giteBean.villeSearch}" effect="fade" scrollHeight="250" converter="villeConverter"/>
+                                <p:autoComplete id="acMinLength" minQueryLength="1" value="#{giteBean.villeSelected}"
+                                                placeholder="Villes (min 1 caractere)"
+                                                styleClass="myStyle" completeMethod="#{giteBean.villeSearch}"
+                                                effect="fade" scrollHeight="250" converter="villeConverter"/>
 
                             </div>
 
-<!--                            <p:selectCheckboxMenu id="advan" value="#{giteBean.listVilleSelected}"-->
-<!--                                                  label="Ville" style="width: 15rem; border-radius: 15px"-->
-<!--                                                  filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"-->
-<!--                                                  scrollHeight="250"-->
-<!--                                                  dynamic="true">-->
-<!--                                <f:selectItems value="#{giteBean.allVilles}" var="ville"-->
-<!--                                               itemLabel="#{ville.nom}"-->
-<!--                                               itemValue="#{ville}"/>-->
-<!--                            </p:selectCheckboxMenu>-->
+                            <!--                            <p:selectCheckboxMenu id="advan" value="#{giteBean.listVilleSelected}"-->
+                            <!--                                                  label="Ville" style="width: 15rem; border-radius: 15px"-->
+                            <!--                                                  filterMatchMode="startsWith" panelStyle="width: 15rem" styleClass="comboBox"-->
+                            <!--                                                  scrollHeight="250"-->
+                            <!--                                                  dynamic="true">-->
+                            <!--                                <f:selectItems value="#{giteBean.allVilles}" var="ville"-->
+                            <!--                                               itemLabel="#{ville.nom}"-->
+                            <!--                                               itemValue="#{ville}"/>-->
+                            <!--                            </p:selectCheckboxMenu>-->
 
-                            <p:commandButton value="filtrer" update=":form:dataViewGites" actionListener="#{giteBean.filtrer}"/>
-                            <p:commandButton value="reset" update=":form:dataViewGites" actionListener="#{giteBean.reset}"/>
+                            <p:commandButton value="filtrer" update=":form:dataViewGites"
+                                             actionListener="#{giteBean.filtrer}"/>
+                            <p:commandButton value="reset" update=":form:dataViewGites"
+                                             actionListener="#{giteBean.reset}"/>
 
 
                         </p:panelGrid>
 
-                        <p:dataView id="dataViewGites" var="product" value="#{giteBean.allGites}" rows="6" paginator="true"
+                        <p:dataView id="dataViewGites" var="product" value="#{giteBean.allGites}" rows="6"
+                                    paginator="true"
                                     paginatorPosition="bottom"
                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                                     gridIcon="pi pi-th-large" listIcon="pi pi-bars"
@@ -108,9 +116,9 @@
                                         </div>
                                     </div>
                                     <div class="product-grid-item-content">
-                                    <div  class="image1" >
-                                        <img alt="no image" src="./resources/images/b2.jpg"/>
-                                    </div>
+                                        <div class="image1">
+                                            <img alt="no image" src="./resources/images/b2.jpg"/>
+                                        </div>
 
                                         <div class="product-name1"
                                              style="font-weight: bold">#{product.ville.departement.nomDepartement}</div>
@@ -129,9 +137,9 @@
                                                              value="Détails" update=":dialogs:manage-product-content"
                                                              oncomplete="PF('manageProductDialog').show()"
                                                              styleClass="edit-button rounded-button ui-button-success"
-                                                             process="@this" >
+                                                             process="@this" action="#{giteBean.chercherDetailGite}">
                                                 <f:setPropertyActionListener value="#{product}"
-                                                                             target="#{giteBean.giteSelected}" />
+                                                                             target="#{giteBean.giteSelected}"/>
                                                 <p:resetInput target=":dialogs:manage-product-content"/>
                                             </p:commandButton>
                                         </div>
@@ -175,35 +183,47 @@
                             <p:outputPanel id="manage-product-content" class="ui-fluid">
                                 <p:outputPanel rendered="#{not empty giteBean.giteSelected}">
 
-                                    <div class="field" style="display: flex">
+                                    <div class="flex flex-column card-container purple-container">
+                                        <div class="flex flex-row flex-wrap card-container">
+                                            <div class="flex align-items-center justify-content-center">
+                                                <img class="image2" alt="no image" src="./resources/images/b2.jpg"
+                                                     style="width:300px; height:200px"/>
+                                            </div>
 
-                                        <img class="image2" alt="no image" src="./resources/images/b2.jpg"
-                                                                    style="width:300px; height:200px"/>
-                                        <div>
-                                            <h:outputText value="#{giteBean.giteSelected.nom}"> </h:outputText>
-                                        </div><br/>
-                                        <div>
-                                            <h:outputText value="#{giteBean.giteSelected.nombreCouchage}"> </h:outputText>
+                                            <div class="flex align-items-center justify-content-center">
+
+                                                <div class="flex flex-column card-container purple-container">
+                                                    <div class="card-container blue-container flex align-items-center justify-content-start">
+                                                        <h1><h:outputText value="#{giteBean.giteSelected.nom},"/>
+                                                            <h:outputText
+                                                                    value="#{giteBean.giteSelected.nombreCouchage} couchages,"/>
+                                                            <h:outputText
+                                                                    value="#{giteBean.giteSelected.surfaceHabitable} m²"/>
+                                                        </h1>
+                                                    </div>
+                                                    <div class="card-container blue-container flex align-items-center justify-content-start">
+                                                        <h:outputText value="#{giteBean.giteSelected.adresse} - "/>
+                                                        <h:outputText
+                                                                value="#{giteBean.giteSelected.codeInseeDept}#{giteBean.giteSelected.codeInsee} - "/>
+                                                        <h:outputText value="#{giteBean.giteSelected.ville.nom}"/>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
                                         </div>
-                                        <div>
-                                            <h:outputText value="#{giteBean.giteSelected.ville.nom}"> </h:outputText>
+                                        <div class="card">
+                                            <div class="flex flex-column md:flex-row card-container indigo-container">
+
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h:outputText value="#{giteBean.giteSelected.ville.codeInseeDept}"> </h:outputText>
-                                        </div>
-
-
-
-                                    </div>
-
+                                    </div>git p
 
 
                                 </p:outputPanel>
                             </p:outputPanel>
 
                         </p:dialog>
-
-
 
 
                     </h:form>

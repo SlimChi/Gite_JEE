@@ -217,6 +217,30 @@ public class GiteBean implements Serializable {
         }
     }
 
+    public void chercherDetailGite(){
+
+        int idGite = giteSelected.getId();
+
+        giteSelected = DaoFactory.getGiteDAO().getByID(idGite);
+        giteSelected.setPersonneGerant(DaoFactory.getPersonneDAO().getByID(giteSelected.getIdPersonneGerant()));
+        giteSelected.setPersonne(DaoFactory.getPersonneDAO().getByID(giteSelected.getIdPersonne()));
+        giteSelected.setEquipementGites(DaoFactory.getEquipementGiteDAO().getListEquipementGiteByIdGite(idGite));
+        giteSelected.setSaisonGites(DaoFactory.getSaisonGiteDAO().getSaisonGiteByIdGite(idGite));
+        giteSelected.setVille(DaoFactory.getVilleDAO().getVilleByCodeInsee(giteSelected.getCodeInseeDept(), giteSelected.getCodeInsee()));
+        giteSelected.setDisponibilites(DaoFactory.getDisponibiliteDAO().getDisponibiliteByIdGerant(giteSelected.getIdPersonneGerant()));
+        giteSelected.setLocaliteVilles(DaoFactory.getLocaliteVilleDAO().getLocaliteVilleByCodeInsee(giteSelected.getCodeInseeDept(), giteSelected.getCodeInsee()));
+
+        //Pour chaque Localite affecte les Saisons ainsi que les Periodes ( ex : HAUTE du 01/01 au 30/04)
+        for (int i = 0; i < giteSelected.getLocaliteVilles().size(); i++) {
+            giteSelected.getLocaliteVilles().get(i).setLocaliteSaisonPeriodes(
+                    DaoFactory.getLocaliteSaisonPeriodeDAO().getLocaliteSaisonPeriodeByIdLocalite(giteSelected.getLocaliteVilles().get(i).getIdLocalite())
+            );
+
+        }
+
+        giteSelected.setTelephones(DaoFactory.getTelephoneDAO().getTelephonesByIdPersonne(giteSelected.getIdPersonneGerant()));
+    }
+
 
     public ArrayList<Ville> villeSearch(String query) {
 
