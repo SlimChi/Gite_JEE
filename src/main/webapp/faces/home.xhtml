@@ -179,7 +179,7 @@
                     <h:form id="dialogs">
                         <p:dialog header="Détails du gite" showEffect="fade" modal="true"
                                   widgetVar="manageProductDialog"
-                                  responsive="true">
+                                  responsive="true" width="1200px" resizable="false" height="700px">
                             <p:outputPanel id="manage-product-content" class="ui-fluid">
                                 <p:outputPanel rendered="#{not empty giteBean.giteSelected}">
 
@@ -195,10 +195,8 @@
                                                 <div class="flex flex-column card-container purple-container">
                                                     <div class="card-container blue-container flex align-items-center justify-content-start">
                                                         <h1><h:outputText value="#{giteBean.giteSelected.nom},"/>
-                                                            <h:outputText
-                                                                    value="#{giteBean.giteSelected.nombreCouchage} couchages,"/>
-                                                            <h:outputText
-                                                                    value="#{giteBean.giteSelected.surfaceHabitable} m²"/>
+                                                            <h:outputText value="#{giteBean.giteSelected.nombreCouchage} couchages,"/>
+                                                            <h:outputText value="#{giteBean.giteSelected.surfaceHabitable} m²"/>
                                                         </h1>
                                                     </div>
                                                     <div class="card-container blue-container flex align-items-center justify-content-start">
@@ -214,7 +212,69 @@
                                         </div>
                                         <div>
                                             <div class="flex flex-column md:flex-row card-container indigo-container">
+                                                <h2><h:outputText value="Equipements et services à disposition :"/> </h2>
+                                            </div>
+                                            <div class="flex flex-column md:flex-row card-container indigo-container">
 
+
+
+                                                <div class="flex align-items-center justify-content-center">
+
+                                                    <p:dataTable var="equipementGite"
+                                                                 value="#{giteBean.giteSelected.equipementGites}">
+                                                        <p:column headerText="Equipement">
+                                                            <h:outputText value="#{equipementGite.equipement.libelle}"/>
+                                                        </p:column>
+
+                                                        <p:column headerText="Prix">
+                                                            <h:outputText value="#{equipementGite.prix} €"/>
+                                                        </p:column>
+
+                                                    </p:dataTable>
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="flex flex-column md:flex-row card-container indigo-container">
+                                                <h2><h:outputText value="Prix par saison :"/> </h2>
+                                            </div>
+                                            <div class="flex flex-column md:flex-row card-container indigo-container">
+                                                <div class="flex align-items-center justify-content-center">
+
+                                                    <p:dataTable var="saisonGite"
+                                                                 value="#{giteBean.giteSelected.saisonGites}">
+                                                        <p:column headerText="Saison">
+                                                            <h:outputText value="#{saisonGite.saison.libelle}"/>
+                                                        </p:column>
+
+                                                        <p:column headerText="Prix">
+                                                            <h:outputText value="#{saisonGite.prix} €"/>
+                                                        </p:column>
+
+                                                    </p:dataTable>
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="flex flex-column md:flex-row card-container indigo-container">
+                                                <h2><h:outputText value="Periodes et saisons :"/> </h2>
+                                            </div>
+                                            <div class="flex flex-column md:flex-row card-container indigo-container">
+
+
+
+                                                <div class="flex align-items-center justify-content-center">
+
+                                                    <p:dataTable var="lsp"
+                                                                 value="#{giteBean.giteSelected.localiteVilles.get(0).localiteSaisonPeriodes}">
+
+                                                        <p:column headerText="Periode">
+                                                            <h:outputText value="#{lsp.periode}"/>
+                                                        </p:column>
+                                                        <p:column headerText="Saison">
+                                                            <h:outputText value="#{lsp.saison.libelle}"/>
+                                                        </p:column>
+
+                                                    </p:dataTable>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

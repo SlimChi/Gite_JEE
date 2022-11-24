@@ -1,0 +1,147 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\r\n    <file type=\"web\" url=\"file://$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision f97d100a0cd46e15e3393bcd4df0b993e513a80f)
++++ b/.idea/misc.xml	(date 1669205547777)
+@@ -11,5 +11,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"gite_jee:war\" />\r\n      <artifact name=\"gite_jee:war exploded\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e53ffc36-37e1-47ea-8855-6a1b4630b10a\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.gitignore\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/artifacts/Gite_JEE_war2.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/artifacts/Gite_JEE_war_exploded2.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/jpa-buddy.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/097aab5e1f0cef269ca2219032b65fe9a32fd39f\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/12cc6a85c99fa9bb3f7f653fda3668ac74015c81\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/188792529ee886cbdc6616248007f7a96c73e03d\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/24bc58a5b4c71cb9da30bf5f6b0883f7b637ad46\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/498422aadfe190ba5787680ea1f89760551bc056\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/558c49b604560afd1841f2a7b49e2f60bd1f99b3\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5fb0607a12c23639e5079218b07208bfc8eda500\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65b95609bff66406a39dceaef93f917e47638f5d\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a0f8909480db755cc2639dc92b3eb8fd96a2e0e\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/947528e0db20d6dc4905edae7153f172a0cae51f\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/961bea36661f000ae0ebf5849d2a3d3e867faf84\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9d406a308083c3ecfd41ad80a095df42b2535b1c\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e615b5147bb1fa8b7607197eb66df17748c4f9f\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/a/c/ace0e70f78a40155f1e235ed5e157ec6ea425cfa\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c29302a077504852f0fceb08a33a106e0c48227c\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cf14a5739ae753961185452b313bbddb905b136c\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d184e3ab675b654f2eea082a01677e30d58aba8e\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4648a96dd5baedc4e01dc31a66b74db6bc57606\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d63fead42773b43005bda3556a9e5aafcbbc99c5\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d71b4b9d639554445e5b30ac7d4b4e617dee8024\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/daea70fa78686f653554dff1e2345e281d97e7bd\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc903ba0c7eb6202d9e54543e977c0ccb165299d\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e12431ae467e2bb4fa241a46039637ecac4250d7\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9f7897e8e887fa9624b87db7fcdb40c370daadd\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/ebf652688cae9ed1f7b4c5e577e32aeea1328df2\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0e0f9cec86fe4b939ae22be5264c758801eb28f\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f7b70219722b59ab08487a466c63b12795090803\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/uiDesigner.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/vcs.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2HwYJlx7bbzmtMVOYxbngTkFYYf\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"C:/JAVA/WorkspaceFileRouge/Gite_JEE\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\JAVA\\WorkspaceFileRouge\\Gite_JEE\\src\\main\\java\\fr\\cs\\gite_jee\\security\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Tomcat 10.0.27\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 10.0.27\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\r\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\r\n      <deployment>\r\n        <artifact name=\"gite_jee:war\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/gite\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"d982ee47-18b5-4fbd-8392-881daecf3b11\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"61980\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"gite_jee:war\" />\r\n          <artifact name=\"gite_jee:war exploded\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e53ffc36-37e1-47ea-8855-6a1b4630b10a\" name=\"Changes\" comment=\"\" />\r\n      <created>1669197548342</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1669197548342</updated>\r\n      <workItem from=\"1669197550575\" duration=\"3482000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f97d100a0cd46e15e3393bcd4df0b993e513a80f)
++++ b/.idea/workspace.xml	(date 1669206054992)
+@@ -2,8 +2,7 @@
+ <project version="4">
+   <component name="ArtifactsWorkspaceSettings">
+     <artifacts-to-build>
+-      <artifact name="gite_jee:war" />
+-      <artifact name="gite_jee:war exploded" />
++      <artifact name="Gite_JEE:war" />
+     </artifacts-to-build>
+   </component>
+   <component name="AutoImportSettings">
+@@ -11,46 +10,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="e53ffc36-37e1-47ea-8855-6a1b4630b10a" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Gite_JEE_war2.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Gite_JEE_war_exploded2.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/097aab5e1f0cef269ca2219032b65fe9a32fd39f" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/12cc6a85c99fa9bb3f7f653fda3668ac74015c81" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/188792529ee886cbdc6616248007f7a96c73e03d" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/24bc58a5b4c71cb9da30bf5f6b0883f7b637ad46" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/498422aadfe190ba5787680ea1f89760551bc056" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/558c49b604560afd1841f2a7b49e2f60bd1f99b3" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5fb0607a12c23639e5079218b07208bfc8eda500" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65b95609bff66406a39dceaef93f917e47638f5d" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a0f8909480db755cc2639dc92b3eb8fd96a2e0e" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/947528e0db20d6dc4905edae7153f172a0cae51f" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/961bea36661f000ae0ebf5849d2a3d3e867faf84" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9d406a308083c3ecfd41ad80a095df42b2535b1c" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e615b5147bb1fa8b7607197eb66df17748c4f9f" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/c/ace0e70f78a40155f1e235ed5e157ec6ea425cfa" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c29302a077504852f0fceb08a33a106e0c48227c" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cf14a5739ae753961185452b313bbddb905b136c" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d184e3ab675b654f2eea082a01677e30d58aba8e" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4648a96dd5baedc4e01dc31a66b74db6bc57606" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d63fead42773b43005bda3556a9e5aafcbbc99c5" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d71b4b9d639554445e5b30ac7d4b4e617dee8024" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/daea70fa78686f653554dff1e2345e281d97e7bd" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc903ba0c7eb6202d9e54543e977c0ccb165299d" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e12431ae467e2bb4fa241a46039637ecac4250d7" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9f7897e8e887fa9624b87db7fcdb40c370daadd" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/ebf652688cae9ed1f7b4c5e577e32aeea1328df2" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0e0f9cec86fe4b939ae22be5264c758801eb28f" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f7b70219722b59ab08487a466c63b12795090803" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -92,14 +53,14 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "C:/JAVA/WorkspaceFileRouge/Gite_JEE"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/JAVA/WorkspaceFileRouge/Gite_JEE&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\JAVA\WorkspaceFileRouge\Gite_JEE\src\main\java\fr\cs\gite_jee\security" />
+@@ -109,9 +70,9 @@
+     <configuration name="Tomcat 10.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+       <option name="UPDATING_POLICY" value="restart-server" />
+       <deployment>
+-        <artifact name="gite_jee:war">
++        <artifact name="Gite_JEE:war">
+           <settings>
+-            <option name="CONTEXT_PATH" value="/gite" />
++            <option name="CONTEXT_PATH" value="/Gite_JEE_war" />
+           </settings>
+         </artifact>
+       </deployment>
+@@ -191,6 +152,7 @@
+         <option name="BuildArtifacts" enabled="true">
+           <artifact name="gite_jee:war" />
+           <artifact name="gite_jee:war exploded" />
++          <artifact name="Gite_JEE:war" />
+         </option>
+       </method>
+     </configuration>
+@@ -210,4 +172,15 @@
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+ </project>
+\ No newline at end of file

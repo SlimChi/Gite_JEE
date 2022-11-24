@@ -1,0 +1,64 @@
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\no\n?src/main/java/fr/cs/gite_jee/converter/EquipementConverter.java\u0012,c\\2\\c29302a077504852f0fceb08a33a106e0c48227c\nQ\n!src/main/webapp/faces/index.xhtml\u0012,9\\d\\9d406a308083c3ecfd41ad80a095df42b2535b1c\ng\n7src/main/java/fr/cs/gite_jee/dao/TypeEquipementDAO.java\u0012,d\\7\\d71b4b9d639554445e5b30ac7d4b4e617dee8024
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ b/.idea/sonarlint/issuestore/index.pb	(date 1669197271308)
+@@ -4,4 +4,50 @@
+ Q
+ !src/main/webapp/faces/index.xhtml,9\d\9d406a308083c3ecfd41ad80a095df42b2535b1c
+ g
+-7src/main/java/fr/cs/gite_jee/dao/TypeEquipementDAO.java,d\7\d71b4b9d639554445e5b30ac7d4b4e617dee8024
+\ No newline at end of file
++7src/main/java/fr/cs/gite_jee/dao/TypeEquipementDAO.java,d\7\d71b4b9d639554445e5b30ac7d4b4e617dee8024
++B
++docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
++Q
++!src/main/webapp/faces/login.xhtml,d\7\d7faf50039447a45d1329964b34a4dc2c94885c3
++e
++5src/main/java/fr/cs/gite_jee/service/ServiceGite.java,c\6\c69a284212e845039eb68766bcdc1b248a56d59e
++a
++1src/main/java/fr/cs/gite_jee/dao/GITEConnect.java,2\e\2e58bad15f9c86713200a92aa038f4bc596d4af1
++]
++-src/main/java/fr/cs/gite_jee/dao/GiteDAO.java,7\4\74ab3c76120ae92a41474c660e74c38745b7d71f
++W
++'src/main/webapp/faces/inscription.xhtml,5\f\5f6a1c0d52cef0c629f4297c333f6f4582899cc7
++]
++-src/main/webapp/faces/templates/contenu.xhtml,c\3\c3f8e1132597af1a7d33265a585a0e5d74f4c655
++Z
++*src/main/webapp/faces/templates/menu.xhtml,d\6\d6f7c1d176485b31b3c7d77abe77f25ed0182cf6
++Z
++*src/main/webapp/faces/templates/pied.xhtml,8\7\87fdc975840006fa80f18ef16a6fc5e1edd208a2
++a
++1src/main/webapp/faces/templates/templateJSF.xhtml,c\f\cf848ce59845d76b6dedaf34a51f7afea927d43f
++]
++-src/main/java/fr/cs/gite_jee/metier/Gite.java,6\0\6016206f4fe436f200f452f833fbdfacad8d0f4c
++d
++4src/main/java/fr/cs/gite_jee/metier/Departement.java,c\4\c4a66e617181104b7510898fafb9c18cd463058f
++f
++6src/main/java/fr/cs/gite_jee/metier/Disponibilite.java,3\7\375d9b59a2152ebd4738e06390f2af6e75ae64e4
++c
++3src/main/java/fr/cs/gite_jee/metier/Equipement.java,0\7\07d03a6ff67bbf509c37af0dc52e4c3b777ac989
++g
++7src/main/java/fr/cs/gite_jee/metier/EquipementGite.java,f\1\f12d848670b73352d52a3027ecdfbd1ab0a09dfd
++a
++1src/main/java/fr/cs/gite_jee/metier/Localite.java,e\d\eddc04b1b2e6caa93b8d4b51a9ce72db2db1c313
++n
++>src/main/java/fr/cs/gite_jee/metier/LocaliteSaisonPeriode.java,f\0\f01a02a0431fd419e9b03fca16fcd2f029cf7469
++f
++6src/main/java/fr/cs/gite_jee/metier/LocaliteVille.java,0\c\0c5488bb941aa156063c7f79213d46c9281a2429
++]
++-src/main/java/fr/cs/gite_jee/metier/Mail.java,e\e\ee13189a4aa63716246b524fbd2df337ccb66d24
++`
++0src/main/java/fr/cs/gite_jee/metier/Periode.java,a\4\a41b281468e848fafb00c7062a654cbad9e51b76
++a
++1src/main/java/fr/cs/gite_jee/metier/Personne.java,a\b\ab7ee9e2615e9392f94a081dcc7f21e41587b171
++_
++/src/main/java/fr/cs/gite_jee/metier/Region.java,5\a\5af768a4a8a59dd566ed95be8430fabb6ec7b9f3
++_
++/src/main/java/fr/cs/gite_jee/metier/Saison.java,4\a\4aa4582f2510ee4c74bc6c6d954e25d1100c962a
+\ No newline at end of file

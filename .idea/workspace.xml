@@ -2,20 +2,53 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="gite_jee:war" />
-      <artifact name="gite_jee:war exploded" />
+      <artifact name="Gite_JEE:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2699e53f-eb87-4c8d-a1f2-c6380e2725c7" name="Changes" comment="security">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="e53ffc36-37e1-47ea-8855-6a1b4630b10a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_11_2022_08_02_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_11_2022_08_02__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2022_13_11_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2022_13_11__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2022_13_32_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2022_13_32__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/07d03a6ff67bbf509c37af0dc52e4c3b777ac989" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0b7a1a05ffc2024ac91901fdd13ef6cf583a6689" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0c5488bb941aa156063c7f79213d46c9281a2429" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2e58bad15f9c86713200a92aa038f4bc596d4af1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/35b8c13cf2eb2a194eada000eb310d65aed53b2a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/375d9b59a2152ebd4738e06390f2af6e75ae64e4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/493f03dfd8b678ec3b21dce04d499c346ea0e1a2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4aa4582f2510ee4c74bc6c6d954e25d1100c962a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4d4678edc69d02ccfa978211703b0af644b8c565" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/56e4e89334fbea9dca3bc28b5ef8ed8d00411f9f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5af768a4a8a59dd566ed95be8430fabb6ec7b9f3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f6a1c0d52cef0c629f4297c333f6f4582899cc7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/6016206f4fe436f200f452f833fbdfacad8d0f4c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/74ab3c76120ae92a41474c660e74c38745b7d71f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7fba7c8385b3b3f7651bafd70b1b13522a99c307" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/83008b1a88ba03a2548bb5b9ad0768c6c307d36c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/87fdc975840006fa80f18ef16a6fc5e1edd208a2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a41b281468e848fafb00c7062a654cbad9e51b76" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c4a66e617181104b7510898fafb9c18cd463058f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/6/c69a284212e845039eb68766bcdc1b248a56d59e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cf848ce59845d76b6dedaf34a51f7afea927d43f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d11a8c3e086d0701a208078ecbb22807b697932d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d7faf50039447a45d1329964b34a4dc2c94885c3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/eddc04b1b2e6caa93b8d4b51a9ce72db2db1c313" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee13189a4aa63716246b524fbd2df337ccb66d24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f01a02a0431fd419e9b03fca16fcd2f029cf7469" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f12d848670b73352d52a3027ecdfbd1ab0a09dfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2022_13_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2022_13_33__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/bean/GiteBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/bean/GiteBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/faces/templates/menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/faces/templates/menu.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/security/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/security/UserBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/faces/home.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/faces/home.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +109,7 @@
     <configuration name="Tomcat 10.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="gite_jee:war">
+        <artifact name="Gite_JEE:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/Gite" />
           </settings>
@@ -158,6 +191,7 @@
         <option name="BuildArtifacts" enabled="true">
           <artifact name="gite_jee:war" />
           <artifact name="gite_jee:war exploded" />
+          <artifact name="Gite_JEE:war exploded" />
         </option>
       </method>
     </configuration>
