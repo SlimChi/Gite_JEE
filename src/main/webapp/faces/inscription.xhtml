@@ -17,36 +17,29 @@
                         <p:messages id="msgs"/>
 
                         <h:panelGrid columns="3" cellpadding="7" styleClass="mb-3">
-                            <p:outputLabel for="Nom" value="Nom:"/>
-                            <p:inputText id="Nom" value="#{remoteValidationView.firstname}" required="true" label="Nom">
-                                <f:validateLength minimum="2"/>
-                            </p:inputText>
-                            <p:message for="Nom" display="icon"/>
 
-                            <p:outputLabel for="Prenom" value="Prenom:"/>
-                            <p:inputText id="Prenom" value="#{remoteValidationView.lastname}" label="Prenom" required="true">
+                            <p:outputLabel for="Login" value="Login:"/>
+                            <p:inputText id="Login" value="#{userBean.personne.users.login}" label="Login" required="true">
                                 <f:validateLength minimum="2"/>
-                                <p:ajax update="msgLastname" event="keyup"/>
                             </p:inputText>
-                            <p:message for="Prenom" id="msgLastname" display="icon"/>
+                            <p:message for="Login" id="login" display="icon"/>
 
                             <p:outputLabel for="Email" value="Email:"/>
-                            <p:inputText id="Email" value="#{remoteValidationView.lastname}" label="Email" required="true">
+                            <p:inputText id="Email" value="#{userBean.personne.idMail}" label="Email" required="true">
                                 <f:validateLength minimum="2"/>
-                                <p:ajax update="msgEmail" event="keyup"/>
                             </p:inputText>
                             <p:message for="Email" id="msgEmail" display="icon"/>
 
                             <p:outputLabel for="Password" value="Password:"/>
-                            <p:inputText id="Password" value="#{remoteValidationView.lastname}" label="Password" required="true">
+                            <p:inputText id="Password" value="#{userBean.personne.users.passeword}" label="Password" required="true">
                                 <f:validateLength minimum="2"/>
-                                <p:ajax update="msgPassword" event="keyup"/>
                             </p:inputText>
                             <p:message for="Password" id="msgPassword" display="icon"/>
 
                         </h:panelGrid>
                         <div style="text-align:center">
-                            <p:commandButton value="Confirmer" update="@form" action="#{remoteValidationView.save}" icon="pi pi-check"/>
+                            <p:commandButton value="Confirmer"
+                                             actionListener="#{userBean.Creer}"/>
                         </div>
 
                     </h:form>

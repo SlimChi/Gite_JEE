@@ -14,9 +14,23 @@ public class Personne {
 
     private Mail mail;
 
+    private Users users;
+
+    private int idUser;
+
 
     public Personne() {
         mail = new Mail();
+        users = new Users();
+
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public int getId() {
@@ -65,6 +79,14 @@ public class Personne {
 
     public void setMail(Mail mail) {
         this.mail = mail;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
     @Override

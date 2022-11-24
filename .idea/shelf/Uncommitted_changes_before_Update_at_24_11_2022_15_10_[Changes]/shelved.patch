@@ -1,0 +1,458 @@
+Index: src/main/webapp/faces/inscription.xhtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\r\n        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\"\r\n      xmlns:h=\"http://xmlns.jcp.org/jsf/html\"\r\n      xmlns:ui=\"http://xmlns.jcp.org/jsf/facelets\"\r\n      xmlns:f=\"http://xmlns.jcp.org/jsf/core\"\r\n      xmlns:p=\"http://primefaces.org/ui\">\r\n<f:view>\r\n    <h:body>\r\n        <ui:composition template=\"templates/templateJSF.xhtml\"\r\n                        xmlns:ui=\"http://xmlns.jcp.org/jsf/facelets\"\r\n                        xmlns:h=\"http://xmlns.jcp.org/jsf/html\">\r\n            <ui:define name=\"contenu\">\r\n                <div class=\"card3\">\r\n                    <h:form>\r\n                        <p:messages id=\"msgs\"/>\r\n\r\n                        <h:panelGrid columns=\"3\" cellpadding=\"7\" styleClass=\"mb-3\">\r\n                            <p:outputLabel for=\"Nom\" value=\"Nom:\"/>\r\n                            <p:inputText id=\"Nom\" value=\"#{remoteValidationView.firstname}\" required=\"true\" label=\"Nom\">\r\n                                <f:validateLength minimum=\"2\"/>\r\n                            </p:inputText>\r\n                            <p:message for=\"Nom\" display=\"icon\"/>\r\n\r\n                            <p:outputLabel for=\"Prenom\" value=\"Prenom:\"/>\r\n                            <p:inputText id=\"Prenom\" value=\"#{remoteValidationView.lastname}\" label=\"Prenom\" required=\"true\">\r\n                                <f:validateLength minimum=\"2\"/>\r\n                                <p:ajax update=\"msgLastname\" event=\"keyup\"/>\r\n                            </p:inputText>\r\n                            <p:message for=\"Prenom\" id=\"msgLastname\" display=\"icon\"/>\r\n\r\n                            <p:outputLabel for=\"Email\" value=\"Email:\"/>\r\n                            <p:inputText id=\"Email\" value=\"#{remoteValidationView.lastname}\" label=\"Email\" required=\"true\">\r\n                                <f:validateLength minimum=\"2\"/>\r\n                                <p:ajax update=\"msgEmail\" event=\"keyup\"/>\r\n                            </p:inputText>\r\n                            <p:message for=\"Email\" id=\"msgEmail\" display=\"icon\"/>\r\n\r\n                            <p:outputLabel for=\"Password\" value=\"Password:\"/>\r\n                            <p:inputText id=\"Password\" value=\"#{remoteValidationView.lastname}\" label=\"Password\" required=\"true\">\r\n                                <f:validateLength minimum=\"2\"/>\r\n                                <p:ajax update=\"msgPassword\" event=\"keyup\"/>\r\n                            </p:inputText>\r\n                            <p:message for=\"Password\" id=\"msgPassword\" display=\"icon\"/>\r\n\r\n                        </h:panelGrid>\r\n                        <div style=\"text-align:center\">\r\n                            <p:commandButton value=\"Confirmer\" update=\"@form\" action=\"#{remoteValidationView.save}\" icon=\"pi pi-check\"/>\r\n                        </div>\r\n\r\n                    </h:form>\r\n                </div>\r\n\r\n            </ui:define>\r\n        </ui:composition>\r\n    </h:body>\r\n</f:view>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/faces/inscription.xhtml b/src/main/webapp/faces/inscription.xhtml
+--- a/src/main/webapp/faces/inscription.xhtml	(revision 7fec358b55a5e7914d3be05d476592fadebcf8a5)
++++ b/src/main/webapp/faces/inscription.xhtml	(date 1669296196158)
+@@ -17,36 +17,29 @@
+                         <p:messages id="msgs"/>
+ 
+                         <h:panelGrid columns="3" cellpadding="7" styleClass="mb-3">
+-                            <p:outputLabel for="Nom" value="Nom:"/>
+-                            <p:inputText id="Nom" value="#{remoteValidationView.firstname}" required="true" label="Nom">
+-                                <f:validateLength minimum="2"/>
+-                            </p:inputText>
+-                            <p:message for="Nom" display="icon"/>
+ 
+-                            <p:outputLabel for="Prenom" value="Prenom:"/>
+-                            <p:inputText id="Prenom" value="#{remoteValidationView.lastname}" label="Prenom" required="true">
++                            <p:outputLabel for="Login" value="Login:"/>
++                            <p:inputText id="Login" value="#{userBean.personne.users.login}" label="Login" required="true">
+                                 <f:validateLength minimum="2"/>
+-                                <p:ajax update="msgLastname" event="keyup"/>
+                             </p:inputText>
+-                            <p:message for="Prenom" id="msgLastname" display="icon"/>
++                            <p:message for="Login" id="login" display="icon"/>
+ 
+                             <p:outputLabel for="Email" value="Email:"/>
+-                            <p:inputText id="Email" value="#{remoteValidationView.lastname}" label="Email" required="true">
++                            <p:inputText id="Email" value="#{userBean.personne.idMail}" label="Email" required="true">
+                                 <f:validateLength minimum="2"/>
+-                                <p:ajax update="msgEmail" event="keyup"/>
+                             </p:inputText>
+                             <p:message for="Email" id="msgEmail" display="icon"/>
+ 
+                             <p:outputLabel for="Password" value="Password:"/>
+-                            <p:inputText id="Password" value="#{remoteValidationView.lastname}" label="Password" required="true">
++                            <p:inputText id="Password" value="#{userBean.personne.users.passeword}" label="Password" required="true">
+                                 <f:validateLength minimum="2"/>
+-                                <p:ajax update="msgPassword" event="keyup"/>
+                             </p:inputText>
+                             <p:message for="Password" id="msgPassword" display="icon"/>
+ 
+                         </h:panelGrid>
+                         <div style="text-align:center">
+-                            <p:commandButton value="Confirmer" update="@form" action="#{remoteValidationView.save}" icon="pi pi-check"/>
++                            <p:commandButton value="Confirmer"
++                                             actionListener="#{userBean.Creer}"/>
+                         </div>
+ 
+                     </h:form>
+Index: src/main/java/fr/cs/gite_jee/metier/Personne.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package fr.cs.gite_jee.metier;\r\n\r\npublic class Personne {\r\n\r\n    private int id;\r\n\r\n    private String nom;\r\n\r\n    private String prenom;\r\n\r\n    private String codeAderent;\r\n\r\n    private String idMail;\r\n\r\n    private Mail mail;\r\n\r\n\r\n    public Personne() {\r\n        mail = new Mail();\r\n    }\r\n\r\n    public int getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getNom() {\r\n        return nom;\r\n    }\r\n\r\n    public void setNom(String nom) {\r\n        this.nom = nom;\r\n    }\r\n\r\n    public String getPrenom() {\r\n        return prenom;\r\n    }\r\n\r\n    public void setPrenom(String prenom) {\r\n        this.prenom = prenom;\r\n    }\r\n\r\n    public String getCodeAderent() {\r\n        return codeAderent;\r\n    }\r\n\r\n    public void setCodeAderent(String codeAderent) {\r\n        this.codeAderent = codeAderent;\r\n    }\r\n\r\n    public String getIdMail() {\r\n        return idMail;\r\n    }\r\n\r\n    public void setIdMail(String idMail) {\r\n        this.idMail = idMail;\r\n    }\r\n\r\n    public Mail getMail() {\r\n        return mail;\r\n    }\r\n\r\n    public void setMail(Mail mail) {\r\n        this.mail = mail;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return nom  + prenom ;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/fr/cs/gite_jee/metier/Personne.java b/src/main/java/fr/cs/gite_jee/metier/Personne.java
+--- a/src/main/java/fr/cs/gite_jee/metier/Personne.java	(revision 7fec358b55a5e7914d3be05d476592fadebcf8a5)
++++ b/src/main/java/fr/cs/gite_jee/metier/Personne.java	(date 1669283170208)
+@@ -14,9 +14,23 @@
+ 
+     private Mail mail;
+ 
++    private Users users;
++
++    private int idUser;
++
+ 
+     public Personne() {
+         mail = new Mail();
++        users = new Users();
++
++    }
++
++    public int getIdUser() {
++        return idUser;
++    }
++
++    public void setIdUser(int idUser) {
++        this.idUser = idUser;
+     }
+ 
+     public int getId() {
+@@ -67,6 +81,14 @@
+         this.mail = mail;
+     }
+ 
++    public Users getUsers() {
++        return users;
++    }
++
++    public void setUsers(Users users) {
++        this.users = users;
++    }
++
+     @Override
+     public String toString() {
+         return nom  + prenom ;
+Index: src/main/java/fr/cs/gite_jee/security/UserBean.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package fr.cs.gite_jee.security;\r\n\r\nimport jakarta.enterprise.context.RequestScoped;\r\nimport jakarta.inject.Inject;\r\nimport jakarta.inject.Named;\r\n\r\nimport javax.crypto.BadPaddingException;\r\nimport javax.crypto.IllegalBlockSizeException;\r\nimport javax.crypto.NoSuchPaddingException;\r\nimport java.io.Serializable;\r\nimport java.security.InvalidKeyException;\r\nimport java.security.NoSuchAlgorithmException;\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.Calendar;\r\nimport java.util.Date;\r\n\r\n@Named\r\n@RequestScoped\r\npublic class UserBean implements Serializable {\r\n\r\n    public ApplicationBean getApplicationBean() {\r\n        return applicationBean;\r\n    }\r\n\r\n    public void setApplicationBean(ApplicationBean applicationBean) {\r\n        this.applicationBean = applicationBean;\r\n    }\r\n\r\n    public String getLogin() {\r\n        return login;\r\n    }\r\n\r\n    public void setLogin(String login) {\r\n        this.login = login;\r\n    }\r\n\r\n    public String getEmail() {\r\n        return email;\r\n    }\r\n\r\n    public void setEmail(String email) {\r\n        this.email = email;\r\n    }\r\n\r\n    public String getPassword() {\r\n        return password;\r\n    }\r\n\r\n    public void setPassword(String password) {\r\n        this.password = password;\r\n    }\r\n\r\n    @Inject\r\n    ApplicationBean applicationBean;\r\n    String login;\r\n    String email;\r\n    String password;\r\n\r\n\r\n    public void Creer() throws NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {\r\n        Calendar calendar = Calendar.getInstance();\r\n        calendar.add(Calendar.MINUTE,10);\r\n        Date expiration = calendar.getTime();\r\n        String url = String.format(\"/%s?c=%s&e=%s&p=%s&d=%s\",\r\n                login,\r\n                SecurityTools.checksum(login+email),\r\n                email,\r\n                applicationBean.passwordHash(password),\r\n                new SimpleDateFormat(\"dd-MM-yy-HH:mm:ss\").format(expiration));\r\n        String urlEncode = SecurityTools.encrypt(url);\r\n        String valideUrl = applicationBean.getAbsolutePath() + \"/confirm.jsf?compte=\" + urlEncode;\r\n        StringBuilder body = new StringBuilder(\"Veuillez cliquer le lien\");\r\n        body.append(valideUrl);\r\n        Email.sendEmail(email,\"Confirmation\",body.toString());\r\n\r\n\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/fr/cs/gite_jee/security/UserBean.java b/src/main/java/fr/cs/gite_jee/security/UserBean.java
+--- a/src/main/java/fr/cs/gite_jee/security/UserBean.java	(revision 7fec358b55a5e7914d3be05d476592fadebcf8a5)
++++ b/src/main/java/fr/cs/gite_jee/security/UserBean.java	(date 1669295687755)
+@@ -1,5 +1,7 @@
+ package fr.cs.gite_jee.security;
+ 
++import fr.cs.gite_jee.metier.Personne;
++import jakarta.annotation.PostConstruct;
+ import jakarta.enterprise.context.RequestScoped;
+ import jakarta.inject.Inject;
+ import jakarta.inject.Named;
+@@ -11,6 +13,7 @@
+ import java.security.InvalidKeyException;
+ import java.security.NoSuchAlgorithmException;
+ import java.text.SimpleDateFormat;
++import java.util.ArrayList;
+ import java.util.Calendar;
+ import java.util.Date;
+ 
+@@ -18,6 +21,26 @@
+ @RequestScoped
+ public class UserBean implements Serializable {
+ 
++    @Inject
++    ApplicationBean applicationBean;
++
++
++    private Personne personne;
++
++
++    @PostConstruct
++    public void init() {
++    personne = new Personne();
++    }
++
++    public Personne getPersonne() {
++        return personne;
++    }
++
++    public void setPersonne(Personne personne) {
++        this.personne = personne;
++    }
++
+     public ApplicationBean getApplicationBean() {
+         return applicationBean;
+     }
+@@ -26,52 +49,22 @@
+         this.applicationBean = applicationBean;
+     }
+ 
+-    public String getLogin() {
+-        return login;
+-    }
+-
+-    public void setLogin(String login) {
+-        this.login = login;
+-    }
+-
+-    public String getEmail() {
+-        return email;
+-    }
+-
+-    public void setEmail(String email) {
+-        this.email = email;
+-    }
+-
+-    public String getPassword() {
+-        return password;
+-    }
+-
+-    public void setPassword(String password) {
+-        this.password = password;
+-    }
+-
+-    @Inject
+-    ApplicationBean applicationBean;
+-    String login;
+-    String email;
+-    String password;
+-
+ 
+     public void Creer() throws NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
+         Calendar calendar = Calendar.getInstance();
+         calendar.add(Calendar.MINUTE,10);
+         Date expiration = calendar.getTime();
+         String url = String.format("/%s?c=%s&e=%s&p=%s&d=%s",
+-                login,
+-                SecurityTools.checksum(login+email),
+-                email,
+-                applicationBean.passwordHash(password),
++                personne.getUsers().getLogin(),
++                SecurityTools.checksum(personne.getUsers().getLogin()+personne.getIdMail()),
++                personne.getIdMail(),
++                applicationBean.passwordHash(personne.getUsers().getPasseword()),
+                 new SimpleDateFormat("dd-MM-yy-HH:mm:ss").format(expiration));
+         String urlEncode = SecurityTools.encrypt(url);
+         String valideUrl = applicationBean.getAbsolutePath() + "/confirm.jsf?compte=" + urlEncode;
+         StringBuilder body = new StringBuilder("Veuillez cliquer le lien");
+         body.append(valideUrl);
+-        Email.sendEmail(email,"Confirmation",body.toString());
++        Email.sendEmail(personne.getIdMail(), "Confirmation",body.toString());
+ 
+ 
+     }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"gite_jee:war\" />\r\n      <artifact name=\"gite_jee:war exploded\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2699e53f-eb87-4c8d-a1f2-c6380e2725c7\" name=\"Changes\" comment=\"security\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/bean/GiteBean.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/bean/GiteBean.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/faces/templates/menu.xhtml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/faces/templates/menu.xhtml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/resources/css/style.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/resources/css/style.css\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"cdi.beans_3_0\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2HwYJlx7bbzmtMVOYxbngTkFYYf\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/JAVA/WorkspaceFileRouge/Gite_JEE&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\JAVA\\WorkspaceFileRouge\\Gite_JEE\\src\\main\\java\\fr\\cs\\gite_jee\\security\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Tomcat 10.0.27\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 10.0.27\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\r\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\r\n      <deployment>\r\n        <artifact name=\"gite_jee:war\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/Gite\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"d982ee47-18b5-4fbd-8392-881daecf3b11\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"61980\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"gite_jee:war\" />\r\n          <artifact name=\"gite_jee:war exploded\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2699e53f-eb87-4c8d-a1f2-c6380e2725c7\" name=\"Changes\" comment=\"security\" />\r\n      <created>1669197548342</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1669197548342</updated>\r\n      <workItem from=\"1669197550575\" duration=\"4477000\" />\r\n      <workItem from=\"1669273025782\" duration=\"2014000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"security\">\r\n      <created>1669205469846</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669205469846</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"security\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"security\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7fec358b55a5e7914d3be05d476592fadebcf8a5)
++++ b/.idea/workspace.xml	(date 1669299017327)
+@@ -11,10 +11,13 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="2699e53f-eb87-4c8d-a1f2-c6380e2725c7" name="Changes" comment="security">
++      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9d6710372f6005198d8ee38e60f570a3c5dce6fe" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/bean/GiteBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/bean/GiteBean.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/faces/templates/menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/faces/templates/menu.xhtml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/metier/Personne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/metier/Personne.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/security/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/cs/gite_jee/security/UserBean.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/faces/inscription.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/faces/inscription.xhtml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -28,8 +31,8 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="Class" />
+         <option value="cdi.beans_3_0" />
++        <option value="Class" />
+       </list>
+     </option>
+   </component>
+@@ -58,15 +61,16 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/JAVA/WorkspaceFileRouge/Gite_JEE&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "last_opened_file_path": "C:/JAVA/WorkspaceFileRouge/Gite_JEE"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\JAVA\WorkspaceFileRouge\Gite_JEE\src\main\java\fr\cs\gite_jee\security" />
+@@ -171,7 +175,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1669197548342</updated>
+       <workItem from="1669197550575" duration="4477000" />
+-      <workItem from="1669273025782" duration="2014000" />
++      <workItem from="1669273025782" duration="15077000" />
+     </task>
+     <task id="LOCAL-00001" summary="security">
+       <created>1669205469846</created>
+Index: src/main/webapp/resources/css/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.product-grid-item-bottom {\r\n    margin-right: 0;\r\n}\r\n\r\n\r\n@media screen and (max-width: 991px) {\r\n    .content {\r\n        flex-direction: column;\r\n        width: 98%;\r\n    }\r\n}\r\n\r\n.content {\r\n    margin: 5%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);\r\n}\r\n\r\n.card {\r\n    margin: 1%;\r\n    padding: 50px;\r\n    border-radius: 8px;\r\n    position: center;\r\n    transition: 0.3s all;\r\n    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);\r\n    width: 70%;\r\n}\r\n\r\n.card2 {\r\n    margin-left: 20%;\r\n    width: 70%;\r\n    padding: 30px;\r\n    border-radius: 8px;\r\n    position: center;\r\n    transition: 0.3s all;\r\n    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);\r\n}\r\n\r\n.card2:hover {\r\n    transform: scale(1.05);\r\n}\r\n\r\n.card-menu {\r\n    margin: 1%;\r\n    padding: 30px;\r\n    border-radius: 8px;\r\n    position: center;\r\n    transition: 0.3s all;\r\n    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);\r\n}\r\n\r\n.card-menu:hover {\r\n    transform: scale(1.05);\r\n}\r\n\r\n.card:hover {\r\n    transform: scale(1.05);\r\n}\r\n\r\n@media screen and (max-width: 1240px) {\r\n    .card {\r\n        width: 90%;\r\n    }\r\n}\r\n.card4 {\r\n\r\n    padding: 30px;\r\n    border-radius: 8px;\r\n    margin-left: 10%;\r\n    transition: 0.3s all;\r\n    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);\r\n    width: 75%;\r\n}\r\n\r\n.card4:hover {\r\n    transform: scale(1.05);\r\n}\r\n\r\nimg {\r\n    width: 300px ;\r\n    border-radius: 8px;\r\n    margin-top: 15px;\r\n    margin-bottom: 15px;\r\n    margin-right: 150px;\r\n\r\n}\r\n@media (max-width:1622px){\r\n    img {\r\n    width: 98%;\r\n\r\n    }\r\n}\r\n@media (max-width:991px){\r\n    img {\r\n        width: 95%;\r\n    }\r\n}\r\n\r\n.pad-top {\r\n    padding-top: 20px;\r\n}\r\n\r\n.product-list-detail {\r\n    display: inline-flex;\r\n\r\n}\r\n\r\n.detail-right {\r\n    margin-left: 50px;\r\n    margin-top: 30px;\r\n}\r\n\r\n.product-price2 {\r\n    margin-top: 80px;\r\n    font-weight: bold;\r\n    font-size: 25px;\r\n    color: cornflowerblue;\r\n}\r\n\r\n.product-price {\r\n    margin-top: 25px;\r\n    font-weight: bold;\r\n    font-size: 25px;\r\n    color: cornflowerblue;\r\n}\r\n\r\n.product-name2 {\r\n    font-weight: bold;\r\n    color: darkred;\r\n\r\n}\r\n\r\n.product-category {\r\n    font-weight: bold;\r\n    color: darkred;\r\n\r\n}\r\n\r\n.topnav {\r\n    overflow: hidden;\r\n    background-color: #333;\r\n}\r\n\r\n.topnav a {\r\n    float: left;\r\n    color: #f2f2f2;\r\n    text-align: center;\r\n    padding: 14px 16px;\r\n    text-decoration: none;\r\n    font-size: 15px;\r\n}\r\n\r\n.topnav a:hover {\r\n    background-color: #ddd;\r\n    color: black;\r\n}\r\n\r\n.topnav a.active {\r\n    background-color: #04AA6D;\r\n    color: white;\r\n}\r\n\r\n.card3 {\r\n    \r\n    width: 350px;\r\n    margin-left: 35%;\r\n    padding: 30px;\r\n    border-radius: 8px;\r\n    transition: 0.3s all;\r\n    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);\r\n}\r\n\r\n.card3:hover {\r\n    transform: scale(1.05);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/resources/css/style.css b/src/main/webapp/resources/css/style.css
+--- a/src/main/webapp/resources/css/style.css	(revision 7fec358b55a5e7914d3be05d476592fadebcf8a5)
++++ b/src/main/webapp/resources/css/style.css	(date 1669281652226)
+@@ -164,7 +164,7 @@
+ }
+ 
+ .card3 {
+-    
++
+     width: 350px;
+     margin-left: 35%;
+     padding: 30px;
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+new file mode 100644
+--- /dev/null	(date 1669282261075)
++++ b/.idea/uiDesigner.xml	(date 1669282261075)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n`\n0src/main/java/fr/cs/gite_jee/dao/DaoFactory.java\u0012,e\\1\\e12431ae467e2bb4fa241a46039637ecac4250d7\n7\n\u0007pom.xml\u0012,4\\4\\442292b8a7efeabbe4cc176709b833b1792140ec\n`\n0src/main/java/fr/cs/gite_jee/security/Email.java\u0012,9\\d\\9d6710372f6005198d8ee38e60f570a3c5dce6fe
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision 7fec358b55a5e7914d3be05d476592fadebcf8a5)
++++ b/.idea/sonarlint/issuestore/index.pb	(date 1669296193173)
+@@ -2,6 +2,4 @@
+ `
+ 0src/main/java/fr/cs/gite_jee/dao/DaoFactory.java,e\1\e12431ae467e2bb4fa241a46039637ecac4250d7
+ 7
+-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+-`
+-0src/main/java/fr/cs/gite_jee/security/Email.java,9\d\9d6710372f6005198d8ee38e60f570a3c5dce6fe
+\ No newline at end of file
++pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+\ No newline at end of file
