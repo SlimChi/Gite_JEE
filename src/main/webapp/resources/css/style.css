@@ -162,3 +162,17 @@ img {
     background-color: #04AA6D;
     color: white;
 }
+
+.card3 {
+    
+    width: 350px;
+    margin-left: 35%;
+    padding: 30px;
+    border-radius: 8px;
+    transition: 0.3s all;
+    box-shadow: 5px 5px 5px 0 rgba(3, 6, 26, 0.15);
+}
+
+.card3:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,364 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>fr.cs</groupId>\r\n    <artifactId>gite_jee</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <name>gite_jee</name>\r\n    <packaging>war</packaging>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <maven.compiler.target>1.8</maven.compiler.target>\r\n        <maven.compiler.source>1.8</maven.compiler.source>\r\n        <junit.version>5.8.2</junit.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>jakarta.enterprise</groupId>\r\n            <artifactId>jakarta.enterprise.cdi-api</artifactId>\r\n            <version>3.0.0</version>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>jakarta.faces</groupId>\r\n            <artifactId>jakarta.faces-api</artifactId>\r\n            <version>4.0.1</version>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.glassfish</groupId>\r\n            <artifactId>jakarta.faces</artifactId>\r\n            <version>4.0.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.jboss.weld.servlet</groupId>\r\n            <artifactId>weld-servlet-shaded</artifactId>\r\n            <version>5.1.0.Final</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>jakarta.servlet</groupId>\r\n            <artifactId>jakarta.servlet-api</artifactId>\r\n            <version>5.0.0</version>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-api</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-engine</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.microsoft.sqlserver</groupId>\r\n            <artifactId>mssql-jdbc</artifactId>\r\n            <version>10.2.1.jre17</version>\r\n        </dependency>\r\n\r\n        <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->\r\n        <dependency>\r\n            <groupId>jakarta.validation</groupId>\r\n            <artifactId>jakarta.validation-api</artifactId>\r\n            <version>3.0.2</version>\r\n        </dependency>\r\n        <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->\r\n        <dependency>\r\n            <groupId>org.hibernate.validator</groupId>\r\n            <artifactId>hibernate-validator</artifactId>\r\n            <version>7.0.5.Final</version>\r\n        </dependency>\r\n        <!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->\r\n        <dependency>\r\n            <groupId>org.primefaces</groupId>\r\n            <artifactId>primefaces</artifactId>\r\n            <version>12.0.0</version>\r\n            <classifier>jakarta</classifier>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.webjars.npm</groupId>\r\n            <artifactId>primeflex</artifactId>\r\n            <version>3.2.0</version>\r\n        </dependency>\r\n\r\n\r\n        <dependency>\r\n            <groupId>jakarta.security.enterprise</groupId>\r\n            <artifactId>jakarta.security.enterprise-api</artifactId>\r\n            <version>3.0.0</version>\r\n        </dependency>\r\n\r\n\r\n\r\n    </dependencies>\r\n\r\n    <build>\r\n\r\n\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-war-plugin</artifactId>\r\n                <version>3.3.2</version>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ b/pom.xml	(date 1669200216756)
+@@ -91,20 +91,38 @@
+             <version>3.2.0</version>
+         </dependency>
+ 
+-
+         <dependency>
+             <groupId>jakarta.security.enterprise</groupId>
+             <artifactId>jakarta.security.enterprise-api</artifactId>
+             <version>3.0.0</version>
+         </dependency>
++        <dependency>
++            <groupId>jakarta.security.enterprise</groupId>
++            <artifactId>jakarta.security.enterprise-api</artifactId>
++            <version>3.0.0</version>
++        </dependency>
++        <dependency>
++            <groupId>org.glassfish.soteria</groupId>
++            <artifactId>jakarta.security.enterprise</artifactId>
++            <version>3.0.0</version>
++        </dependency>
+ 
++        <dependency>
++            <groupId>jakarta.ws.rs</groupId>
++            <artifactId>jakarta.ws.rs-api</artifactId>
++            <version>3.1.0</version>
++        </dependency>
+ 
++        <dependency>
++            <groupId>jakarta.mail</groupId>
++            <artifactId>jakarta.mail-api</artifactId>
++            <version>2.1.0</version>
++        </dependency>
+ 
+     </dependencies>
+ 
+     <build>
+ 
+-
+         <plugins>
+             <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+Index: src/main/java/fr/cs/gite_jee/bean/GiteBean.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package fr.cs.gite_jee.bean;\r\n\r\nimport fr.cs.gite_jee.dao.DaoFactory;\r\nimport fr.cs.gite_jee.metier.*;\r\nimport fr.cs.gite_jee.service.GiteSearch;\r\nimport fr.cs.gite_jee.service.ServiceGite;\r\nimport fr.cs.gite_jee.service.VilleSearch;\r\nimport jakarta.annotation.PostConstruct;\r\nimport jakarta.enterprise.context.SessionScoped;\r\nimport jakarta.faces.application.FacesMessage;\r\nimport jakarta.faces.context.FacesContext;\r\nimport jakarta.inject.Named;\r\nimport org.primefaces.PrimeFaces;\r\n\r\nimport java.io.Serializable;\r\nimport java.util.ArrayList;\r\n\r\n@Named\r\n@SessionScoped\r\npublic class GiteBean implements Serializable {\r\n\r\n\r\n    private static ArrayList<Equipement> allEquipements;\r\n    private Equipement equipementSelected;\r\n    private ArrayList<Equipement> listEquipementSelected;\r\n\r\n    private static ArrayList<TypeEquipement> allTypeEquipements;\r\n    private TypeEquipement typeEquipementSelected;\r\n\r\n    private static ArrayList<Ville> allVilles;\r\n    private Ville villeSelected;\r\n    private ArrayList<Ville> listVilleSelected;\r\n\r\n    private static ArrayList<Region> allRegion;\r\n    private Region regionSelected;\r\n    private ArrayList<Region> listRegionSelected;\r\n\r\n    private static ArrayList<Departement> allDepartement;\r\n\r\n    private ArrayList<Departement> listDepartementSelected;\r\n    private Departement departementSelected;\r\n    private ArrayList<Gite> allGites;\r\n    private ArrayList<Gite> allGitesSelected;\r\n    private Gite giteSelected;\r\n    private static ArrayList<SaisonGite> allSaisonGite;\r\n    private SaisonGite saisonGiteSelected;\r\n\r\n    private ServiceGite serviceGite;\r\n\r\n    private GiteSearch giteSearch;\r\n\r\n    private String idDepartements;\r\n\r\n    @PostConstruct\r\n    private void init() {\r\n\r\n\r\n        allEquipements = DaoFactory.getEquipementDAO().getAll();\r\n        allRegion = DaoFactory.getRegionDAO().getAll();\r\n        allDepartement = DaoFactory.getDepartementDAO().getAll();\r\n        allVilles = DaoFactory.getVilleDAO().getAll();\r\n\r\n\r\n        GiteSearch giteSearch = new GiteSearch();\r\n\r\n\r\n        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);\r\n\r\n    }\r\n\r\n    public void filtrer() {\r\n\r\n        GiteSearch gs = new GiteSearch();\r\n\r\n        if (listEquipementSelected.size() != 0) {\r\n            gs.setNbEquipements(listEquipementSelected.size());\r\n            gs.setIdEquipements(equipementToString());\r\n        }\r\n\r\n        if (listRegionSelected.size() != 0) {\r\n            gs.setNbRegion(listRegionSelected.size());\r\n            gs.setIdRegion(regionToString());\r\n\r\n        }\r\n\r\n        if (listDepartementSelected.size() != 0) {\r\n            gs.setNbDepartement(listDepartementSelected.size());\r\n            gs.setIdDepartement(idDepartements);\r\n        }\r\n\r\n\r\n        if (villeSelected != null) {\r\n\r\n            gs.setVille(villeSelected);\r\n        }\r\n\r\n        allGites = DaoFactory.getGiteDAO().getLike(gs);\r\n\r\n\r\n        listEquipementSelected = null;\r\n        listRegionSelected = null;\r\n        listDepartementSelected = null;\r\n    }\r\n\r\n    public void reset() {\r\n\r\n        giteSearch = new GiteSearch();\r\n        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);\r\n        init();\r\n    }\r\n\r\n    public void departementToString() {\r\n\r\n        int nb = listDepartementSelected.size();\r\n        StringBuilder stringBuilder = new StringBuilder(\"\");\r\n\r\n        for (int i = 0; i < nb; i++) {\r\n            if (i != (nb - 1)) {\r\n                stringBuilder.append(\"'\" + listDepartementSelected.get(i).getCodeInseeDept() + \"',\");\r\n            } else {\r\n                stringBuilder.append(\"'\" + listDepartementSelected.get(i).getCodeInseeDept() + \"'\");\r\n            }\r\n        }\r\n\r\n        this.idDepartements = stringBuilder.toString();\r\n    }\r\n\r\n    private String regionToString() {\r\n        int nb = listRegionSelected.size();\r\n        StringBuilder stringBuilder = new StringBuilder(\"\");\r\n        for (int i = 0; i < nb; i++) {\r\n            if (i != (nb - 1)) {\r\n                stringBuilder.append(listRegionSelected.get(i).getId() + \",\");\r\n            } else {\r\n                stringBuilder.append(listRegionSelected.get(i).getId());\r\n            }\r\n        }\r\n        return stringBuilder.toString();\r\n    }\r\n\r\n    private String equipementToString() {\r\n\r\n        int nb = listEquipementSelected.size();\r\n        StringBuilder stringBuilder = new StringBuilder(\"\");\r\n\r\n        for (int i = 0; i < nb; i++) {\r\n            if (i != (nb - 1)) {\r\n                stringBuilder.append(listEquipementSelected.get(i).getId() + \",\");\r\n            } else {\r\n                stringBuilder.append(listEquipementSelected.get(i).getId());\r\n            }\r\n        }\r\n\r\n\r\n        return stringBuilder.toString();\r\n    }\r\n\r\n    public void NouveauGite() {\r\n        giteSelected = new Gite();\r\n\r\n    }\r\n\r\n    public void deleteGite() {\r\n        DaoFactory.getGiteDAO().delete(giteSelected);\r\n        this.giteSelected = null;\r\n\r\n        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(\"Product Removed\"));\r\n        allGites = DaoFactory.getGiteDAO().getLike(giteSearch);\r\n        PrimeFaces.current().ajax().update(\"form:gites\");\r\n\r\n    }\r\n\r\n    public void saveGite() {\r\n        if (giteSelected.getId() == 0) {\r\n            try {\r\n                DaoFactory.getGiteDAO().insert(giteSelected);\r\n                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(\"Gite ajouté\"));\r\n            } catch (Exception e) {\r\n                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(\"Erreur! gite non ajouté\"));\r\n            }\r\n\r\n        } else {\r\n            DaoFactory.getGiteDAO().update(giteSelected);\r\n            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(\"Article mis à jour\"));\r\n        }\r\n        PrimeFaces.current().ajax().update(\"form:gites\");\r\n        PrimeFaces.current().executeScript(\"PF('manageProductDialog').hide()\");\r\n\r\n    }\r\n\r\n    public void onRegionChange() {\r\n        if (regionSelected.getId() != 0) {\r\n\r\n            allDepartement = DaoFactory.getDepartementDAO().getByRegion(regionSelected.getId());\r\n\r\n        } else {\r\n            allDepartement = DaoFactory.getDepartementDAO().getAll();\r\n            Departement departement = new Departement();\r\n            allDepartement.add(0, departement);\r\n        }\r\n    }\r\n\r\n    public void onDepartementChange() {\r\n        if (departementSelected.getCodeInseeDept() != null) {\r\n\r\n            regionSelected = DaoFactory.getRegionDAO().getByID(departementSelected.getRegion().getId());\r\n            allRegion = new ArrayList<>();\r\n            allRegion.add(departementSelected.getRegion());\r\n\r\n        } else {\r\n\r\n            allRegion = DaoFactory.getRegionDAO().getAll();\r\n            Region region = new Region();\r\n            allRegion.add(0, region);\r\n\r\n\r\n        }\r\n    }\r\n\r\n    public void chercherDetailGite(){\r\n\r\n        int idGite = giteSelected.getId();\r\n\r\n        giteSelected = DaoFactory.getGiteDAO().getByID(idGite);\r\n        giteSelected.setPersonneGerant(DaoFactory.getPersonneDAO().getByID(giteSelected.getIdPersonneGerant()));\r\n        giteSelected.setPersonne(DaoFactory.getPersonneDAO().getByID(giteSelected.getIdPersonne()));\r\n        giteSelected.setEquipementGites(DaoFactory.getEquipementGiteDAO().getListEquipementGiteByIdGite(idGite));\r\n        giteSelected.setSaisonGites(DaoFactory.getSaisonGiteDAO().getSaisonGiteByIdGite(idGite));\r\n        giteSelected.setVille(DaoFactory.getVilleDAO().getVilleByCodeInsee(giteSelected.getCodeInseeDept(), giteSelected.getCodeInsee()));\r\n        giteSelected.setDisponibilites(DaoFactory.getDisponibiliteDAO().getDisponibiliteByIdGerant(giteSelected.getIdPersonneGerant()));\r\n        giteSelected.setLocaliteVilles(DaoFactory.getLocaliteVilleDAO().getLocaliteVilleByCodeInsee(giteSelected.getCodeInseeDept(), giteSelected.getCodeInsee()));\r\n\r\n        //Pour chaque Localite affecte les Saisons ainsi que les Periodes ( ex : HAUTE du 01/01 au 30/04)\r\n        for (int i = 0; i < giteSelected.getLocaliteVilles().size(); i++) {\r\n            giteSelected.getLocaliteVilles().get(i).setLocaliteSaisonPeriodes(\r\n                    DaoFactory.getLocaliteSaisonPeriodeDAO().getLocaliteSaisonPeriodeByIdLocalite(giteSelected.getLocaliteVilles().get(i).getIdLocalite())\r\n            );\r\n\r\n        }\r\n\r\n        giteSelected.setTelephones(DaoFactory.getTelephoneDAO().getTelephonesByIdPersonne(giteSelected.getIdPersonneGerant()));\r\n    }\r\n\r\n\r\n    public ArrayList<Ville> villeSearch(String query) {\r\n\r\n        VilleSearch villeSearch = new VilleSearch();\r\n\r\n        villeSearch.setNom(query);\r\n        villeSearch.setIdDepartement(idDepartements);\r\n\r\n        allVilles = DaoFactory.getVilleDAO().getLike(villeSearch);\r\n\r\n\r\n        return allVilles;\r\n\r\n    }\r\n\r\n\r\n    public ArrayList<Departement> getListDepartementSelected() {\r\n        return listDepartementSelected;\r\n    }\r\n\r\n    public void setListDepartementSelected(ArrayList<Departement> listDepartementSelected) {\r\n        this.listDepartementSelected = listDepartementSelected;\r\n    }\r\n\r\n    public ArrayList<Equipement> getAllEquipements() {\r\n        return allEquipements;\r\n    }\r\n\r\n    public static void setAllEquipements(ArrayList<Equipement> allEquipements) {\r\n        GiteBean.allEquipements = allEquipements;\r\n    }\r\n\r\n    public ArrayList<Region> getAllRegion() {\r\n        return allRegion;\r\n    }\r\n\r\n    public static void setAllRegion(ArrayList<Region> allRegion) {\r\n        GiteBean.allRegion = allRegion;\r\n    }\r\n\r\n    public ArrayList<Ville> getAllVilles() {\r\n        return allVilles;\r\n    }\r\n\r\n    public static void setAllVilles(ArrayList<Ville> allVilles) {\r\n        GiteBean.allVilles = allVilles;\r\n    }\r\n\r\n    public Equipement getEquipementSelected() {\r\n        return equipementSelected;\r\n    }\r\n\r\n    public void setEquipementSelected(Equipement equipementSelected) {\r\n        this.equipementSelected = equipementSelected;\r\n    }\r\n\r\n    public Ville getVilleSelected() {\r\n        return villeSelected;\r\n    }\r\n\r\n    public void setVilleSelected(Ville villeSelected) {\r\n        this.villeSelected = villeSelected;\r\n    }\r\n\r\n    public ArrayList<TypeEquipement> getAllTypeEquipements() {\r\n        return allTypeEquipements;\r\n    }\r\n\r\n    public static void setAllTypeEquipements(ArrayList<TypeEquipement> allTypeEquipements) {\r\n        GiteBean.allTypeEquipements = allTypeEquipements;\r\n    }\r\n\r\n    public TypeEquipement getTypeEquipementSelected() {\r\n        return typeEquipementSelected;\r\n    }\r\n\r\n    public void setTypeEquipementSelected(TypeEquipement typeEquipementSelected) {\r\n        this.typeEquipementSelected = typeEquipementSelected;\r\n    }\r\n\r\n\r\n    public Region getRegionSelected() {\r\n        return regionSelected;\r\n    }\r\n\r\n    public void setRegionSelected(Region regionSelected) {\r\n        this.regionSelected = regionSelected;\r\n    }\r\n\r\n    public ArrayList<Departement> getAllDepartement() {\r\n        return allDepartement;\r\n    }\r\n\r\n    public static void setAllDepartement(ArrayList<Departement> allDepartement) {\r\n        GiteBean.allDepartement = allDepartement;\r\n    }\r\n\r\n    public Departement getDepartementSelected() {\r\n        return departementSelected;\r\n    }\r\n\r\n    public void setDepartementSelected(Departement departementSelected) {\r\n        this.departementSelected = departementSelected;\r\n    }\r\n\r\n    public ArrayList<Gite> getAllGites() {\r\n        return allGites;\r\n    }\r\n\r\n    public void setAllGites(ArrayList<Gite> allGites) {\r\n        this.allGites = allGites;\r\n    }\r\n\r\n    public Gite getGiteSelected() {\r\n        return giteSelected;\r\n    }\r\n\r\n    public void setGiteSelected(Gite giteSelected) {\r\n        this.giteSelected = giteSelected;\r\n    }\r\n\r\n    public ArrayList<Gite> getAllGitesSelected() {\r\n        return allGitesSelected;\r\n    }\r\n\r\n    public void setAllGitesSelected(ArrayList<Gite> allGitesSelected) {\r\n        this.allGitesSelected = allGitesSelected;\r\n    }\r\n\r\n    public ArrayList<Equipement> getListEquipementSelected() {\r\n        return listEquipementSelected;\r\n    }\r\n\r\n    public void setListEquipementSelected(ArrayList<Equipement> listEquipementSelected) {\r\n        this.listEquipementSelected = listEquipementSelected;\r\n    }\r\n\r\n    public ArrayList<Region> getListRegionSelected() {\r\n        return listRegionSelected;\r\n    }\r\n\r\n    public void setListRegionSelected(ArrayList<Region> listRegionSelected) {\r\n        this.listRegionSelected = listRegionSelected;\r\n    }\r\n\r\n    public ArrayList<Ville> getListVilleSelected() {\r\n        return listVilleSelected;\r\n    }\r\n\r\n    public void setListVilleSelected(ArrayList<Ville> listVilleSelected) {\r\n        this.listVilleSelected = listVilleSelected;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/fr/cs/gite_jee/bean/GiteBean.java b/src/main/java/fr/cs/gite_jee/bean/GiteBean.java
+--- a/src/main/java/fr/cs/gite_jee/bean/GiteBean.java	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ b/src/main/java/fr/cs/gite_jee/bean/GiteBean.java	(date 1669206800802)
+@@ -213,7 +213,6 @@
+             Region region = new Region();
+             allRegion.add(0, region);
+ 
+-
+         }
+     }
+ 
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ /dev/null	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
+@@ -1,8 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: .idea/artifacts/Gite_JEE_war2.xml
+===================================================================
+diff --git a/.idea/artifacts/Gite_JEE_war2.xml b/.idea/artifacts/Gite_JEE_war2.xml
+deleted file mode 100644
+--- a/.idea/artifacts/Gite_JEE_war2.xml	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ /dev/null	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
+@@ -1,14 +0,0 @@
+-<component name="ArtifactManager">
+-  <artifact type="war" name="Gite_JEE:war">
+-    <output-path>$PROJECT_DIR$/target</output-path>
+-    <properties id="maven-jee-properties">
+-      <options>
+-        <module>Gite_JEE</module>
+-        <packaging>war</packaging>
+-      </options>
+-    </properties>
+-    <root id="archive" name="gite_jee-1.0-SNAPSHOT.war">
+-      <element id="artifact" artifact-name="Gite_JEE:war exploded" />
+-    </root>
+-  </artifact>
+-</component>
+\ No newline at end of file
+Index: .mvn/wrapper/maven-wrapper.properties
+===================================================================
+diff --git a/.mvn/wrapper/maven-wrapper.properties b/.mvn/wrapper/maven-wrapper.properties
+deleted file mode 100644
+--- a/.mvn/wrapper/maven-wrapper.properties	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ /dev/null	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
+@@ -1,2 +0,0 @@
+-distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.8.5/apache-maven-3.8.5-bin.zip
+-wrapperUrl=https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar
+\ No newline at end of file
+Index: .idea/artifacts/Gite_JEE_war_exploded2.xml
+===================================================================
+diff --git a/.idea/artifacts/Gite_JEE_war_exploded2.xml b/.idea/artifacts/Gite_JEE_war_exploded2.xml
+deleted file mode 100644
+--- a/.idea/artifacts/Gite_JEE_war_exploded2.xml	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ /dev/null	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
+@@ -1,45 +0,0 @@
+-<component name="ArtifactManager">
+-  <artifact type="exploded-war" name="Gite_JEE:war exploded">
+-    <output-path>$PROJECT_DIR$/target/gite_jee-1.0-SNAPSHOT</output-path>
+-    <properties id="maven-jee-properties">
+-      <options>
+-        <exploded>true</exploded>
+-        <module>Gite_JEE</module>
+-        <packaging>war</packaging>
+-      </options>
+-    </properties>
+-    <root id="root">
+-      <element id="directory" name="WEB-INF">
+-        <element id="directory" name="classes">
+-          <element id="module-output" name="Gite_JEE" />
+-        </element>
+-        <element id="directory" name="lib">
+-          <element id="library" level="project" name="Maven: org.glassfish:jakarta.faces:4.0.0" />
+-          <element id="library" level="project" name="Maven: jakarta.annotation:jakarta.annotation-api:2.1.0" />
+-          <element id="library" level="project" name="Maven: org.jboss.weld.servlet:weld-servlet-shaded:5.1.0.Final" />
+-          <element id="library" level="project" name="Maven: com.microsoft.sqlserver:mssql-jdbc:10.2.1.jre17" />
+-          <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:3.0.2" />
+-          <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:7.0.5.Final" />
+-          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.4.1.Final" />
+-          <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.5.1" />
+-          <element id="library" level="project" name="Maven: org.primefaces:primefaces:jakarta:12.0.0" />
+-          <element id="library" level="project" name="Maven: org.webjars.npm:primeflex:3.2.0" />
+-          <element id="library" level="project" name="Maven: org.openjfx:javafx-base:17.0.1" />
+-          <element id="library" level="project" name="Maven: org.openjfx:javafx-base:win:17.0.1" />
+-          <element id="library" level="project" name="Maven: jakarta.security.enterprise:jakarta.security.enterprise-api:3.0.0" />
+-          <element id="library" level="project" name="Maven: jakarta.json:jakarta.json-api:2.1.0" />
+-          <element id="library" level="project" name="Maven: org.glassfish.soteria:jakarta.security.enterprise:3.0.0" />
+-          <element id="library" level="project" name="Maven: com.nimbusds:nimbus-jose-jwt:9.23" />
+-          <element id="library" level="project" name="Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1" />
+-          <element id="library" level="project" name="Maven: jakarta.ws.rs:jakarta.ws.rs-api:3.1.0" />
+-          <element id="library" level="project" name="Maven: jakarta.mail:jakarta.mail-api:2.1.0" />
+-          <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:2.1.0" />
+-        </element>
+-      </element>
+-      <element id="directory" name="META-INF">
+-        <element id="file-copy" path="$PROJECT_DIR$/target/gite_jee-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+-      </element>
+-      <element id="javaee-facet-resources" facet="Gite_JEE/web/Web" />
+-    </root>
+-  </artifact>
+-</component>
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ /dev/null	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/jpa-buddy.xml
+===================================================================
+diff --git a/.idea/jpa-buddy.xml b/.idea/jpa-buddy.xml
+deleted file mode 100644
+--- a/.idea/jpa-buddy.xml	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ /dev/null	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="JpaBuddyIdeaProjectConfig">
+-    <option name="renamerInitialized" value="true" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\r\n    <file type=\"web\" url=\"file://$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"jpab\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ b/.idea/misc.xml	(date 1669198937901)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="FrameworkDetectionExcludesConfiguration">
+     <file type="web" url="file://$PROJECT_DIR$" />
+   </component>
+@@ -10,10 +11,5 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-  <component name="ProjectType">
+-    <option name="id" value="jpab" />
+-  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\no\n?src/main/java/fr/cs/gite_jee/converter/EquipementConverter.java\u0012,c\\2\\c29302a077504852f0fceb08a33a106e0c48227c\nQ\n!src/main/webapp/faces/index.xhtml\u0012,9\\d\\9d406a308083c3ecfd41ad80a095df42b2535b1c\ng\n7src/main/java/fr/cs/gite_jee/dao/TypeEquipementDAO.java\u0012,d\\7\\d71b4b9d639554445e5b30ac7d4b4e617dee8024
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision d17153fa53c4f1bf43fbf90724ad684355fe6f31)
++++ b/.idea/sonarlint/issuestore/index.pb	(date 1669206802957)
+@@ -1,7 +1,0 @@
+-
+-o
+-?src/main/java/fr/cs/gite_jee/converter/EquipementConverter.java,c\2\c29302a077504852f0fceb08a33a106e0c48227c
+-Q
+-!src/main/webapp/faces/index.xhtml,9\d\9d406a308083c3ecfd41ad80a095df42b2535b1c
+-g
+-7src/main/java/fr/cs/gite_jee/dao/TypeEquipementDAO.java,d\7\d71b4b9d639554445e5b30ac7d4b4e617dee8024
+\ No newline at end of file

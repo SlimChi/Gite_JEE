@@ -213,7 +213,6 @@ public class GiteBean implements Serializable {
             Region region = new Region();
             allRegion.add(0, region);
 
-
         }
     }
 
